@@ -342,10 +342,18 @@
             Lock: ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
         };
 
+        // Helper to cleanly extract names if they use the standard "Name1 & Name2" format
+        const extractNames = (namesString) => {
+            if (namesString.includes(" & ")) return namesString.split(" & ");
+            return [namesString, ""];
+        };
+
         const PinScreen = ({ onAccess }) => {
             const [pin, setPin] = useState('');
             const [error, setError] = useState(false);
             const [isUnlocking, setIsUnlocking] = useState(false);
+            
+            const [name1, name2] = extractNames(CONFIG.coupleNames);
 
             const handleKeyPress = (num) => { if (pin.length < 4) setPin(prev => prev + num); };
             const handleClear = () => setPin('');
@@ -364,7 +372,25 @@
                 <div className={`min-h-screen flex flex-col items-center justify-center px-4 ${activeTheme.bg} transition-all duration-700 ease-in-out ${isUnlocking ? 'opacity-0 scale-110 blur-sm pointer-events-none' : 'opacity-100 scale-100'}`}>
                     <div className="text-center mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
                         <Icons.Lock className="w-8 h-8 mx-auto mb-6 text-stone-300" />
-                        <h1 className={`text-4xl sm:text-5xl font-serif mb-3 ${activeTheme.pinkText || activeTheme.text}`}>{CONFIG.coupleNames}</h1>
+                        
+                        {/* New Overlapping Header Design */}
+                        <div className="relative flex flex-col items-center justify-center mb-6 mt-4 w-full">
+                            <h1 className={`text-5xl sm:text-6xl font-serif z-10 ${activeTheme.text} -translate-x-6`}>
+                                {name1}
+                            </h1>
+                            <span 
+                                className={`text-[6rem] sm:text-[7rem] font-serif absolute opacity-40 italic z-0 ${activeTheme.pinkText || 'text-stone-300'}`} 
+                                style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)', lineHeight: 1 }}
+                            >
+                                &
+                            </span>
+                            {name2 && (
+                                <h1 className={`text-5xl sm:text-6xl font-serif z-10 ${activeTheme.text} translate-x-8 -mt-2`}>
+                                    {name2}
+                                </h1>
+                            )}
+                        </div>
+
                         <p className="text-stone-500 font-light tracking-wide">{CONFIG.displayDate}</p>
                         <p className="text-stone-400 font-light text-sm mt-1">{CONFIG.weddingLocation}</p>
                     </div>
@@ -527,6 +553,8 @@
             const timelineScrollRef = useRef(null); 
             const activeRef = useRef(null); 
             const weddingDate = new Date(CONFIG.weddingDate);
+            
+            const [name1, name2] = extractNames(CONFIG.coupleNames);
 
             // Native Smooth Scroll Tracking
             const handleTimelineScroll = (e) => {
@@ -723,13 +751,31 @@
                         <div ref={timelineScrollRef} onScroll={handleTimelineScroll} className={`${panelWidth} shrink-0 relative z-20 h-screen md:h-[100dvh] overflow-y-auto ${activeTheme.bg}`}>
                             
                             {/* NATIVE SCROLL-AWAY HEADER */}
-                            <header className="max-w-4xl mx-auto px-4 py-8 text-center select-none flex flex-col items-center justify-center" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
-                                <div className="w-full flex justify-center pb-6 md:hidden"><div className="w-12 h-1.5 bg-stone-200 rounded-full"></div></div>
-                                <h1 className={`text-4xl font-serif mb-2 ${activeTheme.pinkText || activeTheme.text}`}>{CONFIG.coupleNames}</h1>
+                            <header className="max-w-4xl mx-auto px-4 py-12 text-center select-none flex flex-col items-center justify-center" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
+                                <div className="w-full flex justify-center pb-8 md:hidden"><div className="w-12 h-1.5 bg-stone-200 rounded-full"></div></div>
+                                
+                                {/* New Overlapping Header Design */}
+                                <div className="relative flex flex-col items-center justify-center mb-8 mt-2 w-full">
+                                    <h1 className={`text-5xl sm:text-6xl font-serif z-10 ${activeTheme.text} -translate-x-6`}>
+                                        {name1}
+                                    </h1>
+                                    <span 
+                                        className={`text-[6rem] sm:text-[7rem] font-serif absolute opacity-40 italic z-0 ${activeTheme.pinkText || 'text-stone-300'}`} 
+                                        style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)', lineHeight: 1 }}
+                                    >
+                                        &
+                                    </span>
+                                    {name2 && (
+                                        <h1 className={`text-5xl sm:text-6xl font-serif z-10 ${activeTheme.text} translate-x-8 -mt-2`}>
+                                            {name2}
+                                        </h1>
+                                    )}
+                                </div>
+
                                 <p className="text-stone-600 font-light tracking-wide">{CONFIG.displayDate}</p>
                                 <p className="text-stone-400 font-light text-sm mt-1">{CONFIG.weddingLocation}</p>
                                 {countdown.days > 0 || countdown.hours > 0 || countdown.minutes > 0 ? (
-                                    <div className="mt-4 flex items-center justify-center gap-4">
+                                    <div className="mt-6 flex items-center justify-center gap-4">
                                         <Icons.Clock className="w-4 h-4 text-stone-400" />
                                         <div className="flex gap-3 text-sm">
                                             <div className="flex flex-col items-center"><span className={`text-2xl font-serif ${activeTheme.text}`}>{countdown.days}</span><span className="text-xs text-stone-500 uppercase tracking-wide">Days</span></div>
