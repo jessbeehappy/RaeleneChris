@@ -51,7 +51,7 @@
             displayDate: "August 8, 2026",
             weddingLocation: "Sydney, Australia",
             pinCode: "0808",
-            theme: "pistachio", 
+            theme: "custom", 
             enableMapScreen: false, 
             mapImageURL: "",
             footerMessage: "",
@@ -296,7 +296,19 @@
             rose: { bg: 'bg-rose-50', text: 'text-rose-900', light: 'bg-rose-100', border: 'border-rose-200', accent: 'bg-rose-700 text-white border-rose-700', accentText: 'text-rose-700', fill: 'fill-rose-200', overlay: 'bg-rose-950' },
             sage: { bg: 'bg-emerald-50', text: 'text-emerald-900', light: 'bg-emerald-100', border: 'border-emerald-200', accent: 'bg-emerald-700 text-white border-emerald-700', accentText: 'text-emerald-700', fill: 'fill-emerald-200', overlay: 'bg-emerald-950' },
             ocean: { bg: 'bg-sky-50', text: 'text-sky-900', light: 'bg-sky-100', border: 'border-sky-200', accent: 'bg-sky-700 text-white border-sky-700', accentText: 'text-sky-700', fill: 'fill-sky-200', overlay: 'bg-sky-950' },
-            pistachio: { bg: 'bg-[#f1f4eb]', text: 'text-[#4a5c33]', light: 'bg-[#e2eacb]', border: 'border-[#c4d1a6]', accent: 'bg-[#9fb578] text-white border-[#9fb578]', accentText: 'text-[#748a4c]', fill: 'fill-[#d4e0b8]', overlay: 'bg-[#313d22]', pinkText: 'text-[#d49a9a]', pinkAccent: 'bg-[#d49a9a] text-white border-[#d49a9a]' }
+            pistachio: { bg: 'bg-[#f1f4eb]', text: 'text-[#4a5c33]', light: 'bg-[#e2eacb]', border: 'border-[#c4d1a6]', accent: 'bg-[#9fb578] text-white border-[#9fb578]', accentText: 'text-[#748a4c]', fill: 'fill-[#d4e0b8]', overlay: 'bg-[#313d22]', pinkText: 'text-[#d49a9a]', pinkAccent: 'bg-[#d49a9a] text-white border-[#d49a9a]' },
+            custom: { 
+                bg: 'bg-[#F4EFEA]',                             
+                text: 'text-[#2B2927]',                         
+                light: 'bg-[#F4EFEA]/60',                       
+                border: 'border-[#9AA48A]/50',                  
+                accent: 'bg-[#9AA48A] text-white border-[#9AA48A]', 
+                accentText: 'text-[#6E1A24]',                   
+                fill: 'fill-[#9AA48A]',                         
+                overlay: 'bg-[#2B2927]',                        
+                pinkText: 'text-[#D29B9B]',                     
+                pinkAccent: 'bg-[#D29B9B] text-white border-[#D29B9B]' 
+            }
         };
         const activeTheme = THEMES[CONFIG.theme] || THEMES.classic;
 
