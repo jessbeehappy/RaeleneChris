@@ -7,7 +7,8 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Kept original fonts and added Courier Prime and Special Elite for the new theme -->
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&family=Special+Elite&display=swap" rel="stylesheet">
     
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%23fff1f2' rx='100' ry='100'/%3E%3Cpath fill='%23f43f5e' d='M256 420.4l-27.2-24.7C132.3 308.3 68 250.3 68 179.2 68 121.4 113.4 75.7 171 75.7c32.6 0 63.8 15.2 85 39.5 21.2-24.3 52.4-39.5 85-39.5 57.6 0 103 45.7 103 103.5 0 71.1-64.3 129.1-160.8 216.5L256 420.4z' opacity='0.15'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia, serif' font-size='160' fill='%231c1917'%3ER%26C%3C/text%3E%3C/svg%3E">
     <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%23fff1f2'/%3E%3Cpath fill='%23f43f5e' d='M256 420.4l-27.2-24.7C132.3 308.3 68 250.3 68 179.2 68 121.4 113.4 75.7 171 75.7c32.6 0 63.8 15.2 85 39.5 21.2-24.3 52.4-39.5 85-39.5 57.6 0 103 45.7 103 103.5 0 71.1-64.3 129.1-160.8 216.5L256 420.4z' opacity='0.15'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia, serif' font-size='160' fill='%231c1917'%3ER%26C%3C/text%3E%3C/svg%3E">
@@ -34,6 +35,19 @@
         
         @keyframes shake { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-5px); } 40%, 80% { transform: translateX(5px); } }
         .animate-shake { animation: shake 0.4s ease-in-out; }
+
+        /* Vibe/Couples Theme Overrides */
+        body[data-theme="couples_vibe"] { 
+            font-family: 'Courier Prime', monospace; 
+        }
+        body[data-theme="couples_vibe"] h1, 
+        body[data-theme="couples_vibe"] h2, 
+        body[data-theme="couples_vibe"] h3, 
+        body[data-theme="couples_vibe"] .font-serif { 
+            font-family: 'Special Elite', cursive; 
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
     </style>
 </head>
 <body>
@@ -51,7 +65,7 @@
             displayDate: "August 8, 2026",
             weddingLocation: "Sydney, Australia",
             pinCode: "0808",
-            theme: "custom", 
+            theme: "couples_vibe", // <-- Change back to "custom" to restore the spreadsheet design
             enableMapScreen: false, 
             mapImageURL: "",
             footerMessage: "",
@@ -94,6 +108,9 @@
                 }
             }
         };
+
+        // Inject the active theme as a data attribute so the custom CSS fonts apply
+        document.body.setAttribute('data-theme', CONFIG.theme);
 
         const vendors = [
             { role: 'Photographer & Videographer', name: 'Pepperjune', contact: 'TBC', email: 'TBC' },
@@ -308,6 +325,19 @@
                 overlay: 'bg-[#2B2927]',                        
                 pinkText: 'text-[#D29B9B]',                     
                 pinkAccent: 'bg-[#D29B9B] text-white border-[#D29B9B]' 
+            },
+            // --- NEW THEME BASED ON THE COUPLE'S WEBSITE VIBE ---
+            couples_vibe: { 
+                bg: 'bg-[#FFFFFF]',                             
+                text: 'text-[#331114]',                         
+                light: 'bg-[#EBBBC3]',                       
+                border: 'border-[#331114]',                  
+                accent: 'bg-[#EBBBC3] text-[#331114] border border-[#331114] shadow-[2px_2px_0px_#331114]', 
+                accentText: 'text-[#331114]',                   
+                fill: 'fill-[#EBBBC3]',                         
+                overlay: 'bg-[#331114]',                        
+                pinkText: 'text-[#331114]',                     
+                pinkAccent: 'bg-white text-[#331114] border border-[#331114] shadow-[2px_2px_0px_#331114]' 
             }
         };
         const activeTheme = THEMES[CONFIG.theme] || THEMES.classic;
@@ -373,7 +403,7 @@
                     <div className="text-center mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
                         <Icons.Lock className="w-8 h-8 mx-auto mb-6 text-stone-300" />
                         
-                        {/* New Overlapping Header Design */}
+                        {/* Overlapping Header Design */}
                         <div className="relative flex flex-col items-center justify-center mb-6 mt-4 w-full">
                             <h1 className={`text-5xl sm:text-6xl font-serif z-10 ${activeTheme.text} -translate-x-6`}>
                                 {name1}
@@ -754,7 +784,7 @@
                             <header className="max-w-4xl mx-auto px-4 py-12 text-center select-none flex flex-col items-center justify-center" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
                                 <div className="w-full flex justify-center pb-8 md:hidden"><div className="w-12 h-1.5 bg-stone-200 rounded-full"></div></div>
                                 
-                                {/* New Overlapping Header Design */}
+                                {/* Overlapping Header Design */}
                                 <div className="relative flex flex-col items-center justify-center mb-8 mt-2 w-full">
                                     <h1 className={`text-5xl sm:text-6xl font-serif z-10 ${activeTheme.text} -translate-x-6`}>
                                         {name1}
