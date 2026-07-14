@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Wedding Day-Of Timeline</title>
+    <title>Raelene and Chris' Wedding Timeline</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -129,7 +129,9 @@
                 { id: 'bride', label: 'Bride' },
                 { id: 'groom', label: 'Groom' },
                 { id: 'sisters', label: 'Sisters' },
-                { id: 'best_mates', label: 'Best Mates' }
+                { id: 'best_mates', label: 'Best Mates' },
+                { id: 'helpers', label: 'TP & Jess' },
+                { id: 'vendors', label: 'Vendors' }
             ],
 
             checklists: {
@@ -154,203 +156,278 @@
                 },
                 best_mates: {
                     theme: 'charcoal', title: 'Best Mates',
-                    items: ['Suits', 'Coordinated ties or pocket squares', 'Deodorant', 'Mints', 'Nurofen', 'Phone chargers', 'Printed speech notes', 'Morning playlist'],
+                    items: ['Suits', 'Coordinated ties or pocket squares', 'Deodorant', 'Mints', 'Nurofen', 'Phone chargers', 'Gabby: printed speech notes', 'Morning playlist'],
                     footer: "Keep the vibes high"
+                },
+                helpers: {
+                    theme: 'ivory', title: 'TP & Jess',
+                    items: ['Breakfast + coffee + water to BOTH rooms (8:30am)', 'Lunch to both rooms (11:30am)', 'Check Chris is awake (10:30am)', 'Check Chris is on track (11:30am)', 'Check in on the bump-in team at Ivy (12pm)', 'Vendor contact list saved in your phone', 'Cash/cards for any on-the-day tips', 'Herd family for the group photo list (4:30pm)', 'Take the gift/wishing well card box home'],
+                    footer: "The day runs on you two"
                 }
             }
         };
 
         const vendors = [
-            { role: 'Photographer & Videographer', name: 'Pepperjune', contact: 'TBC', email: 'TBC' },
-            { role: 'Florist', name: 'TBC', contact: 'TBC', email: 'TBC' },
-            { role: 'Vinyl DJ', name: 'TBC', contact: 'TBC', email: 'TBC' },
-            { role: 'Transport', name: 'TBC', contact: 'TBC', email: 'TBC' },
-            { role: 'Venue', name: 'TBC', contact: 'TBC', email: 'TBC' },
-            { role: 'Photobooth', name: 'TBC', contact: 'TBC', email: 'TBC' },
-            { role: 'Wedding Coordinator', name: 'TBC', contact: 'TBC', email: 'TBC' },
-            { role: 'Celebrant', name: 'TBC', contact: 'TBC', email: 'TBC' }
+            { role: 'Hair & Makeup', name: 'Rachelle Facelo', contact: 'TBA', email: '' },
+            { role: 'Photo & Video (on-the-day)', name: 'Pepperjune — David', contact: '0402811434', email: '' },
+            { role: 'Photo & Video (logistics)', name: 'Pepperjune — Shennen', contact: '0291703638', email: '' },
+            { role: 'Celebrant', name: 'Maria Olivina', contact: '0450121025', email: 'maria.olvina@gmail.com' },
+            { role: 'DJ (4pm–10pm)', name: 'The Vintage Stylus', contact: '0418217637', email: 'thevintagestylus@gmail.com' },
+            { role: 'Florist', name: 'Sonder Studios — Juls', contact: '0403158533', email: 'histudiosonder@gmail.com' },
+            { role: 'Photobooth (5pm–10pm)', name: 'PHOTOAUTOMAT', contact: 'TBA', email: '' },
+            { role: 'Content Creator', name: 'Onthedaysocials — Alicia', contact: '0410176533', email: '' },
+            { role: 'Chairs, Aisle & Seating', name: 'Bentwood Events — Andrew Hood', contact: '0403815550', email: 'info@bentwoodevents.com.au' },
+            { role: 'Venue Coordinator', name: 'Merivale — Ivy Sunroom', contact: 'TBA', email: '' },
+            { role: 'MC', name: 'TBC — may rotate', contact: 'TBA', email: '' }
         ];
 
         const responsiblePeople = [
-            { role: "Raelene's Sister", name: 'Roselene', contact: 'TBC' },
-            { role: "Raelene's Sister", name: 'Rina', contact: 'TBC' },
-            { role: 'Best Mate', name: 'Gabby', contact: 'TBC' }
+            { role: "Raelene's Sister", name: 'Rina', contact: 'TBA' },
+            { role: "Raelene's Sister", name: 'Roselene', contact: 'TBA' },
+            { role: 'Groomsman', name: 'Gabby', contact: 'TBA' },
+            { role: 'Right hand (non-bridal party)', name: 'Tharinda "TP"', contact: 'TBA' },
+            { role: 'Right hand (non-bridal party)', name: 'Jess', contact: 'TBA' }
         ];
 
+        // ============================================================================
+        // THE DAY — 30 minute blocks, 8:00 AM to 11:00 PM.
+        // Built from the runsheet. Anything still unconfirmed is marked [TBC];
+        // suggestions I've added to fill gaps are marked [SUGGESTED].
+        // ============================================================================
         const events = [
             {
-                id: 1, time: '9:00 AM', title: 'Wake Up & Breakfast', location: 'Hotel Suite, CBD', responsible: ['Bride'], teams: ['bride', 'sisters'],
+                id: 1, time: '8:00 AM', title: 'Wake Up', location: "Rae's Suite — Establishment Hotel, CBD", responsible: ['Raelene', 'Sisters'], teams: ['bride', 'sisters'],
                 description: [
-                    { type: 'paragraph', text: 'Slow morning! Order room service, hydrate, and put on a fun playlist.' },
-                    { type: 'checklist', items: ['Order breakfast/coffee', 'Drink plenty of water'] }
+                    { type: 'paragraph', text: 'Slow start. Curtains open, big glass of water, breakfast on the way. [TBC — who is in the room from the start?]' },
+                    { type: 'checklist', items: ['Hydrate (you will forget to later)', 'Dress + veil steamed and hanging', 'Phones on chargers', 'Playlist on'] }
                 ], links: []
             },
             {
-                id: 2, time: '9:30 AM', title: 'HMUA Arrival & Setup', location: 'Hotel Suite, CBD', responsible: ['HMUA'], teams: ['all'],
+                id: 2, time: '8:30 AM', title: 'Breakfast Delivered', location: 'Both hotel suites, CBD', responsible: ['TP', 'Jess'], teams: ['all', 'helpers'],
                 description: [
-                    { type: 'paragraph', text: 'Hair and makeup artists arrive, set up their stations, and find the best natural light.' },
-                    { type: 'checklist', items: ['Clear a large table/space', 'Provide an extension cord'] }
+                    { type: 'paragraph', text: 'TP & Jess bring breakfast, coffee and water to BOTH rooms — bridal party and family in Rae\'s room, and Chris\'s room too. Eat something. It is a long day and the next real meal is 11:30.' },
+                    { type: 'checklist', items: ['Coffee + water to Rae\'s room', 'Coffee + water to Chris\'s room', 'Nothing greasy or staining near the dress'] }
                 ], links: []
             },
             {
-                id: 3, time: '10:00 AM', title: 'Hair & Makeup: Block 1', location: 'Hotel Suite, CBD', responsible: ['HMUA'], teams: ['sisters'],
+                id: 3, time: '9:00 AM', title: 'Set Up the HMU Station', location: "Rae's Suite, CBD", responsible: ['Sisters'], teams: ['bride', 'sisters'],
                 description: [
-                    { type: 'paragraph', text: 'First two people sit in the chair (usually MOG and one sister). Bride can relax.' },
-                    { type: 'checklist', items: ['Steam the wedding dress', 'Steam sisters\' outfits'] }
+                    { type: 'paragraph', text: 'Clear a large space near the best natural light — and near a power point. Rachelle needs both. [TBC — who arrives to help?]' },
+                    { type: 'checklist', items: ['Table + chair by the window', 'Power point free (bring an extension cord)', 'Room tidy — bags and rubbish out of shot'] }
                 ], links: []
             },
             {
-                id: 4, time: '10:30 AM', title: 'Prep Details & Relax', location: 'Hotel Suite, CBD', responsible: ['Sisters'], teams: ['bride', 'sisters'],
+                id: 4, time: '9:30 AM', title: 'Rachelle (HMU) Arrives', location: "Rae's Suite, CBD", responsible: ['Rachelle Facelo'], teams: ['bride', 'sisters'],
                 description: [
-                    { type: 'paragraph', text: 'While others are in HMU, gather all the little details the photographer will need later.' },
-                    { type: 'checklist', items: ['Put rings, shoes, perfume, and invite in a box'] }
+                    { type: 'paragraph', text: 'Hair and makeup artist Rachelle Facelo arrives and sets up. Confirmed 9:30am start.' },
+                    { type: 'checklist', items: ['Offer her a coffee/water', 'Confirm the running order with her'] }
                 ], links: []
             },
             {
-                id: 5, time: '11:00 AM', title: 'Hair & Makeup: Block 2', location: 'Hotel Suite, CBD', responsible: ['HMUA'], teams: ['sisters'],
+                id: 5, time: '10:00 AM', title: 'Raelene — Hair & Makeup', location: "Rae's Suite, CBD", responsible: ['Rachelle Facelo', 'Raelene'], teams: ['bride'],
                 description: [
-                    { type: 'paragraph', text: 'Next sister rotates into the hair/makeup chair.' },
-                    { type: 'checklist', items: ['Check in on everyone\'s water intake'] }
+                    { type: 'paragraph', text: 'Confirmed order: Rae 10:00 → Sister 1 12:00 → Sister 2 12:45, all done by 2:30pm.' },
+                    { type: 'paragraph', text: '[TBC — Rae is considering moving herself to the MIDDLE of the order so Pepperjune (arriving 1:30pm) can film her final touches. Worth deciding early, it changes everyone\'s slot.]' },
+                    { type: 'checklist', items: ['Decide the running order — then tell Rachelle'] }
                 ], links: []
             },
             {
-                id: 6, time: '11:30 AM', title: 'Lunch & Grazing', location: 'Hotel Suite, CBD', responsible: ['Sisters'], teams: ['all'],
+                id: 6, time: '10:30 AM', title: 'Details Boxed + Chris Wake-Up Check', location: 'Both suites, CBD', responsible: ['Sisters', 'TP'], teams: ['bride', 'sisters', 'helpers', 'groom'],
                 description: [
-                    { type: 'paragraph', text: 'Light, non-messy lunch (like a grazing board) to keep energy levels up.' },
-                    { type: 'checklist', items: ['Arrange food delivery', 'Keep food away from dresses!'] }
+                    { type: 'paragraph', text: 'Gather everything the photographer will want to shoot as a flatlay, in one box. Meanwhile TP checks Chris is awake and moving.' },
+                    { type: 'checklist', items: ['Both rings', 'Shoes', 'Perfume', 'Printed vows (two copies)', 'Invitation suite + any heirloom pieces', 'TP: eyes on Chris — is he up?'] }
                 ], links: []
             },
             {
-                id: 7, time: '12:00 PM', title: 'Bride\'s Hair & Makeup', location: 'Hotel Suite, CBD', responsible: ['HMUA'], teams: ['bride'],
+                id: 7, time: '11:00 AM', title: 'Hair & Makeup Continues', location: "Rae's Suite, CBD", responsible: ['Rachelle Facelo'], teams: ['bride', 'sisters'],
                 description: [
-                    { type: 'paragraph', text: 'The bride gets in the chair. This ensures her look is the freshest for the ceremony.' },
-                    { type: 'checklist', items: ['Sisters and MOG start getting dressed'] }
+                    { type: 'paragraph', text: 'Rae still in the chair. Quiet hour — good time for the sisters to steam their outfits and get anything hanging.' },
+                    { type: 'checklist', items: ['Sisters\' outfits steamed', 'Flower girl / page boy outfits laid out'] }
                 ], links: []
             },
             {
-                id: 8, time: '12:30 PM', title: 'Touch-ups for Family', location: 'Hotel Suite, CBD', responsible: ['HMUA'], teams: ['sisters'],
+                id: 8, time: '11:30 AM', title: 'Lunch Delivered + Check-in', location: 'Both suites, CBD', responsible: ['TP', 'Jess'], teams: ['all', 'helpers'],
                 description: [
-                    { type: 'paragraph', text: 'Final lip and powder touch-ups for the sisters and MOG once they are dressed.' },
-                    { type: 'checklist', items: ['Pack overnight bags if moving rooms'] }
+                    { type: 'paragraph', text: 'TP & Jess bring lunch to the bridal party and family. Second check on Chris.' },
+                    { type: 'checklist', items: ['Light, non-messy food (grazing board, not a bolognese)', 'Keep it away from the dress', 'TP: check Chris is on track'] }
                 ], links: []
             },
             {
-                id: 9, time: '1:00 PM', title: 'Photographer Arrives', location: 'Hotel Suite, CBD', responsible: ['Photographer'], teams: ['bride', 'sisters'],
+                id: 9, time: '12:00 PM', title: 'BUMP-IN STARTS AT IVY', location: 'Ivy Sunroom, Level 3, 330 George St', responsible: ['Sonder Studios', 'Bentwood Events', 'Merivale'], teams: ['all', 'vendors'],
                 description: [
-                    { type: 'paragraph', text: 'Photographer arrives to capture candid moments, robe shots, and the final stages of HMU.' },
-                    { type: 'checklist', items: ['Tidy the room (hide bags/rubbish)'] }
+                    { type: 'paragraph', text: 'The venue starts becoming a wedding. Sonder Studios (florals) arrive ~12:00 [TBC]. Bentwood Events set ceremony chairs, aisle runner and reception seating. Merivale coordinating.' },
+                    { type: 'paragraph', text: 'At the hotel: Sister 1 goes into hair & makeup.' },
+                    { type: 'checklist', items: ['TP or Jess: eyes on the bump-in — is everyone in?', 'Confirm ceremony chair count + aisle position'] }
                 ], links: []
             },
             {
-                id: 10, time: '1:30 PM', title: 'Detail Shots', location: 'Hotel Suite, CBD', responsible: ['Photographer'], teams: ['all'],
+                id: 10, time: '12:30 PM', title: 'Chris Starts Getting Ready', location: "Chris's Suite, CBD", responsible: ['Chris', 'Gabby'], teams: ['groom', 'best_mates'],
                 description: [
-                    { type: 'paragraph', text: 'Photographer focuses on the dress, rings, florals, and accessories.' },
-                    { type: 'checklist', items: ['Ensure bouquets have been delivered'] }
+                    { type: 'paragraph', text: 'Chris begins getting ready so he is camera-ready when Pepperjune arrive at 1:30. Room needs to look good — it will be photographed.' },
+                    { type: 'checklist', items: ['Suit pressed, shirt on hanger', 'Shoes polished', 'Rings + vows in the room', 'Bags, rubbish and takeaway containers hidden'] }
                 ], links: []
             },
             {
-                id: 11, time: '2:00 PM', title: 'HMU Wraps Up', location: 'Hotel Suite, CBD', responsible: ['HMUA'], teams: ['bride'],
+                id: 11, time: '1:00 PM', title: 'Quiet Half Hour [SUGGESTED]', location: 'Both suites, CBD', responsible: ['Everyone'], teams: ['all'],
                 description: [
-                    { type: 'paragraph', text: 'Bride\'s hair and makeup are completely finished. Final mirror check.' },
-                    { type: 'checklist', items: ['Pay/tip HMUA if not done prior'] }
+                    { type: 'paragraph', text: 'This slot is blank in the runsheet. Suggestion: use it as the buffer. Sister 2 is nearly up for HMU (12:45), Rae should be close to done, and Pepperjune land in 30 minutes.' },
+                    { type: 'checklist', items: ['Eat something — last chance before 6:30pm', 'Both rooms tidied for photos', 'Detail box ready by the window (best light)', 'Confirm cars/transport for 3:00pm departure'] }
                 ], links: []
             },
             {
-                id: 12, time: '2:30 PM', title: 'Getting into the Dress', location: 'Hotel Suite, CBD', responsible: ['Sisters'], teams: ['bride', 'sisters'],
+                id: 12, time: '1:30 PM', title: 'PEPPERJUNE COVERAGE BEGINS — Chris\'s Room', location: "Chris's Suite, CBD", responsible: ['Pepperjune (David)', 'Chris'], teams: ['groom', 'best_mates', 'vendors'],
                 description: [
-                    { type: 'paragraph', text: 'Allow plenty of time for intricate buttons, corsets, and putting on shoes.' },
-                    { type: 'checklist', items: ['Have a crochet hook ready for buttons', 'Scissors for tags'] }
+                    { type: 'paragraph', text: 'Photo/video coverage starts. David captures Chris\'s final getting-ready moments — tie, watch, cufflinks, shoes.' },
+                    { type: 'paragraph', text: '[TBC — Chris\'s parents in the room for prep photos? Gabby in the room? And when does the content creator (Alicia) start?]' },
+                    { type: 'checklist', items: ['Chris: save the tie/watch/shoes for the camera', 'Ideally all HMU is done by now'] }
                 ], links: []
             },
             {
-                id: 13, time: '3:00 PM', title: 'Bridal Portraits & Reveal', location: 'Hotel Suite, CBD', responsible: ['Photographer'], teams: ['bride', 'sisters'],
+                id: 13, time: '2:00 PM', title: "Pepperjune Move to Rae's Room + Photobooth Bump-in", location: "Rae's Suite / Ivy Sunroom", responsible: ['Pepperjune', 'Sisters', 'PHOTOAUTOMAT'], teams: ['bride', 'sisters', 'vendors'],
                 description: [
-                    { type: 'paragraph', text: 'A few beautiful portraits of the bride fully dressed before leaving, plus a "reveal" to the MOG.' },
-                    { type: 'checklist', items: ['Have tissues on standby'] }
+                    { type: 'paragraph', text: 'Pepperjune move across to capture the sisters and the final touches. Sisters help Rae into the dress. At Ivy, PHOTOAUTOMAT bumps the photobooth in.' },
+                    { type: 'paragraph', text: '[TBC — when does Rae\'s bouquet arrive? Hotel or straight to the ceremony? Worth locking in with Sonder Studios.]' },
+                    { type: 'checklist', items: ['Crochet hook for buttons, scissors for tags', 'Flower girls + page boys dressed', 'Tissues on standby'] }
                 ], links: []
             },
             {
-                id: 14, time: '3:30 PM', title: 'Travel to Venue', location: 'Hotel Suite to Ivy', responsible: ['Sisters'], teams: ['bride', 'sisters'],
+                id: 14, time: '2:30 PM', title: 'HMU Final Touches & Veil', location: "Rae's Suite, CBD", responsible: ['Rachelle Facelo', 'Raelene', 'Sisters'], teams: ['bride', 'sisters'],
                 description: [
-                    { type: 'paragraph', text: 'Short trip within the CBD. Groom is simultaneously arriving at the Ivy Sunroom to greet guests.' },
-                    { type: 'checklist', items: ['Book Uber Black/transport', 'Groom confirms venue music is on'] }
+                    { type: 'paragraph', text: 'Final touch-ups, veil goes on. Hair and makeup officially wraps. Pepperjune leave first to set up at the ceremony.' },
+                    { type: 'paragraph', text: '[TBC — does Chris head to Ivy now? If so, he must be clear of wherever Rae will arrive.]' },
+                    { type: 'checklist', items: ['Veil placed', 'Touch-up kit + lipstick packed for later', 'Pay/tip Rachelle if not prepaid'] }
                 ], links: []
             },
             {
-                id: 15, time: '4:00 PM', title: 'The Ceremony', location: 'Ivy Sunroom', responsible: ['Celebrant'], teams: ['all'],
+                id: 15, time: '3:00 PM', title: 'DEPART FOR IVY SUNROOM', location: 'Establishment Hotel → Ivy Sunroom', responsible: ['Raelene', 'Sisters', 'Pepperjune'], teams: ['bride', 'sisters'],
                 description: [
-                    { type: 'paragraph', text: 'Short and sweet 30-minute ceremony.' },
-                    { type: 'checklist', items: ['Rings ready with the Groom'] }
+                    { type: 'paragraph', text: 'Rae and the sisters leave for Ivy. Keep Chris well clear of the arrival route.' },
+                    { type: 'checklist', items: ['RINGS', 'VOWS (printed)', 'FLOWERS', 'Emergency kit + touch-up bag', 'Flat shoes for walking'] }
                 ], links: []
             },
             {
-                id: 16, time: '4:30 PM', title: 'Post-Ceremony Mingle', location: 'Ivy Sunroom', responsible: ['MC / You'], teams: ['all'],
+                id: 16, time: '3:30 PM', title: 'Pre-Ceremony — Guests Start Arriving', location: 'Ivy Sunroom (Lower Section)', responsible: ['Maria Olivina', 'The Vintage Stylus', 'Chris', 'Pepperjune'], teams: ['all', 'vendors'],
                 description: [
-                    { type: 'paragraph', text: 'Immediate hugs, champagne, and congratulations as cocktail hour kicks off.' },
-                    { type: 'checklist', items: ['Grab a drink for the Bride & Groom'] }
+                    { type: 'paragraph', text: 'Celebrant Maria Olivina arrives, checks in with Chris and sets up mic/audio. DJ finishes bump-in. Pepperjune set up for the ceremony. Guests begin arriving.' },
+                    { type: 'paragraph', text: '[TBC — does Rae have a private room to wait in out of sight? Needs answering with Merivale.]' },
+                    { type: 'checklist', items: ['Mic tested', 'Chris, flower girls + page boys in position', 'TP & Jess: confirm Rae + sisters ready for a 4:00 start', 'Rings with Chris/Gabby'] }
                 ], links: []
             },
             {
-                id: 17, time: '5:00 PM', title: 'Family Photos', location: 'Ivy Sunroom', responsible: ['Photographer'], teams: ['all'],
+                id: 17, time: '4:00 PM', title: 'THE CEREMONY', location: 'Ivy Sunroom (Lower Section)', responsible: ['Maria Olivina', 'The Vintage Stylus', 'Pepperjune'], teams: ['all'],
                 description: [
-                    { type: 'paragraph', text: 'Quick, structured session for family group shots before the couple leaves for portraits.' },
-                    { type: 'checklist', items: ['Print physical list of photo groupings'] }
+                    { type: 'paragraph', text: 'Maria asks everyone to be seated. DJ plays the processional. Roughly 30 minutes.' },
+                    { type: 'paragraph', text: '[TBC — order of entry, and whether it is an unplugged ceremony (phones away). Both should be announced by Maria at the start.]' },
+                    { type: 'checklist', items: ['Order of entry locked', 'Unplugged? — decide and tell Maria', 'Vows in hand'] }
                 ], links: []
             },
             {
-                id: 18, time: '5:30 PM', title: 'Couple\'s Portrait Photoshoot', location: 'CBD / Ivy Precinct', responsible: ['Photographer'], teams: ['bride', 'groom'],
+                id: 18, time: '4:30 PM', title: 'Group Photos', location: 'Ivy Sunroom (Lower Section)', responsible: ['Pepperjune', 'TP', 'Maria Olivina'], teams: ['all'],
                 description: [
-                    { type: 'paragraph', text: 'Exploring the venue and surrounding CBD architecture for creative portraits.' },
-                    { type: 'checklist', items: ['Bring comfortable flat shoes for walking'] }
+                    { type: 'paragraph', text: 'Ceremony ends ~4:30. Straight into the prioritised group shots — Pepperjune have time for about 8–10 groups.' },
+                    { type: 'paragraph', text: '[TBC — the priority list of 8 groups is still empty in the runsheet. Write it, print it, and give it to TP.]' },
+                    { type: 'checklist', items: ['Printed group photo list', 'A loud voice to call names (TP or Maria)', 'Keep those people back — tell them before the ceremony'] }
                 ], links: []
             },
             {
-                id: 19, time: '6:00 PM', title: 'Couple Refreshes', location: 'Bridal Suite / Private Area', responsible: ['Bride / Groom'], teams: ['bride', 'groom'],
+                id: 19, time: '4:45 PM', title: 'Bridal Portraits Begin', location: 'Ivy precinct / venue surrounds', responsible: ['Pepperjune', 'Raelene', 'Chris'], teams: ['bride', 'groom'],
                 description: [
-                    { type: 'paragraph', text: 'The couple takes 30 minutes alone to breathe, bustle the dress, touch up makeup, and eat a canapé.' },
-                    { type: 'checklist', items: ['Bustle the dress', 'Touch up lipstick'] }
+                    { type: 'paragraph', text: 'Pepperjune take Rae & Chris away for portraits around the venue — roughly an hour, wrapping by 5:45.' },
+                    { type: 'checklist', items: ['Flat shoes', 'Touch-up kit with a sister', 'Someone hands you both a drink first'] }
                 ], links: []
             },
             {
-                id: 20, time: '6:30 PM', title: 'Reception Commences', location: 'Ivy Sunroom', responsible: ['MC'], teams: ['all'],
+                id: 20, time: '5:00 PM', title: 'COCKTAIL HOUR + PHOTOBOOTH OPENS', location: 'Ivy Sunroom (Main + Outdoor)', responsible: ['PHOTOAUTOMAT', 'Sonder Studios', 'Merivale'], teams: ['all', 'vendors'],
                 description: [
-                    { type: 'paragraph', text: 'Couple is officially introduced to the room and guests take their seats.' },
-                    { type: 'checklist', items: ['Cue entrance music'] }
+                    { type: 'paragraph', text: 'Canapés and drinks. PHOTOAUTOMAT opens (runs to 10pm). Sonder Studios move florals from the ceremony section into the reception. DJ moves across too.' },
+                    { type: 'checklist', items: ['Guests directed to the main + outdoor sections', 'Flowers moved — confirm with Juls', 'Wishing well + guest book visible [TBC — where?]'] }
                 ], links: []
             },
             {
-                id: 21, time: '7:00 PM', title: 'Entrees Served', location: 'Ivy Sunroom', responsible: ['Venue Staff'], teams: ['all'],
+                id: 21, time: '5:30 PM', title: 'Room Flip + Couple Refresh', location: 'Ivy Sunroom', responsible: ['Merivale', 'Raelene', 'Chris'], teams: ['all'],
+                description: [
+                    { type: 'paragraph', text: 'Portraits wrap ~5:45. Reception room finishing its flip behind the scenes. Rae & Chris get a few minutes alone before the doors open — bustle the dress, touch up, actually eat a canapé.' },
+                    { type: 'checklist', items: ['Bustle the dress', 'Lipstick', 'Eat. Something.', 'Two minutes, just the two of you'] }
+                ], links: []
+            },
+            {
+                id: 22, time: '6:00 PM', title: 'RECEPTION DOORS OPEN', location: 'Ivy Sunroom', responsible: ['MC', 'Merivale', 'The Vintage Stylus'], teams: ['all'],
+                description: [
+                    { type: 'paragraph', text: 'Guests seated. Rae & Chris are introduced and [TBC] go straight into the first dance — this is a lovely, unusual choice and gets the awkward one out of the way early.' },
+                    { type: 'paragraph', text: '[TBC — who kicks off the reception? The MC role is still unassigned and the runsheet has FIVE separate MC moments (MC1–MC5). See my notes.]' },
+                    { type: 'checklist', items: ['MC confirmed', 'Entrance song cued with the DJ', 'First dance song cued'] }
+                ], links: []
+            },
+            {
+                id: 23, time: '6:30 PM', title: 'Entrées Served', location: 'Ivy Sunroom', responsible: ['Merivale'], teams: ['all'],
                 description: [
                     { type: 'paragraph', text: 'Dinner service begins.' },
-                    { type: 'checklist', items: ['Check in with couple'] }
+                    { type: 'checklist', items: ['Dietaries double-checked with Merivale', 'Water + wine poured before any speeches'] }
                 ], links: []
             },
             {
-                id: 22, time: '7:30 PM', title: 'Mains Served', location: 'Ivy Sunroom', responsible: ['Venue Staff'], teams: ['all'],
+                id: 24, time: '7:00 PM', title: 'Speeches — First Set', location: 'Ivy Sunroom', responsible: ['MC', "Chris's Dad", 'Gabby', 'Rina'], teams: ['all', 'best_mates', 'sisters'],
                 description: [
-                    { type: 'paragraph', text: 'Main courses are dropped.' },
-                    { type: 'checklist', items: ['Pour wine/champagne for toasts'] }
+                    { type: 'paragraph', text: 'First set of speeches while guests finish entrées. Likely: Chris\'s dad, Gabby, Rina. [TBC — order and who introduces.]' },
+                    { type: 'checklist', items: ['Mic tested and handed over', 'Speakers warned they are up', 'Photographer knows it is happening'] }
                 ], links: []
             },
             {
-                id: 23, time: '8:00 PM', title: 'Speeches', location: 'Ivy Sunroom', responsible: ['MC, Speakers'], teams: ['all'],
+                id: 25, time: '7:30 PM', title: 'Mains Served + Vendor Meals', location: 'Ivy Sunroom', responsible: ['Merivale'], teams: ['all', 'vendors'],
                 description: [
-                    { type: 'paragraph', text: 'The sister and close friend deliver their speeches while guests finish eating.' },
-                    { type: 'checklist', items: ['Test the microphone'] }
+                    { type: 'paragraph', text: 'Mains out. This is the natural window to feed the vendors — photo, video, content, DJ — so they eat while Rae & Chris eat, and are back on camera for speeches and the first dance.' },
+                    { type: 'checklist', items: ['Vendor meals confirmed with Merivale', 'Rae & Chris actually sit and eat'] }
                 ], links: []
             },
             {
-                id: 24, time: '8:30 PM', title: 'First Dance & Cake', location: 'Ivy Sunroom', responsible: ['DJ / Musician'], teams: ['all'],
+                id: 26, time: '8:00 PM', title: 'Speeches — Second Set', location: 'Ivy Sunroom', responsible: ['MC', 'Best friends', 'Rae & Chris'], teams: ['all'],
                 description: [
-                    { type: 'paragraph', text: 'Couple cuts the cake, transitions straight into the first dance, and the dancefloor opens!' },
-                    { type: 'checklist', items: ['Dim the venue lights'] }
+                    { type: 'paragraph', text: 'Second set — best friends, then Rae & Chris to thank everyone. [TBC]' },
+                    { type: 'checklist', items: ['Couple\'s thank-you notes printed', 'Water on the table for speakers'] }
                 ], links: []
             },
             {
-                id: 25, time: '9:00 PM', title: 'Party & Dancefloor', location: 'Ivy Sunroom', responsible: ['DJ / Musician'], teams: ['all'],
+                id: 27, time: '8:30 PM', title: 'Cake Cut + First Dance [TBC]', location: 'Ivy Sunroom', responsible: ['MC', 'The Vintage Stylus', 'Pepperjune'], teams: ['all'],
                 description: [
-                    { type: 'paragraph', text: 'Formalities are over, time to celebrate.' },
-                    { type: 'checklist', items: ['Request favorite songs'] }
+                    { type: 'paragraph', text: 'IMPORTANT: Pepperjune\'s coverage ENDS at 8:30. Anything you want photographed — cake cut, dress change, first dance if it did not happen at 6pm — has to be before this, not after.' },
+                    { type: 'paragraph', text: '[TBC — the runsheet has the first dance in two places (6:00pm and 8:30pm). Pick one.]' },
+                    { type: 'checklist', items: ['Cake cut BEFORE 8:30 if you want photos', 'Dress change? — decide', 'Lights dimmed, dancefloor cued'] }
+                ], links: []
+            },
+            {
+                id: 28, time: '9:00 PM', title: 'DANCE FLOOR OPEN', location: 'Ivy Sunroom', responsible: ['The Vintage Stylus'], teams: ['all'],
+                description: [
+                    { type: 'paragraph', text: 'Formalities done. Go and enjoy it.' },
+                    { type: 'checklist', items: ['Flats on', 'Request your song'] }
+                ], links: []
+            },
+            {
+                id: 29, time: '9:30 PM', title: 'Party Continues [SUGGESTED]', location: 'Ivy Sunroom', responsible: ['TP', 'Jess'], teams: ['all', 'helpers'],
+                description: [
+                    { type: 'paragraph', text: 'Blank in the runsheet. Suggestion: this is the quiet admin window before the end — while everyone is on the dancefloor and no one will notice.' },
+                    { type: 'checklist', items: ['Last call for the photobooth (closes at 10)', 'Gifts + wishing well collected and given to a named person', 'Guest book brought in from wherever it drifted', 'Personal items gathered from the bridal suite'] }
+                ], links: []
+            },
+            {
+                id: 30, time: '10:00 PM', title: 'Reception Wraps Up', location: 'Ivy Sunroom', responsible: ['MC', 'The Vintage Stylus', 'PHOTOAUTOMAT'], teams: ['all'],
+                description: [
+                    { type: 'paragraph', text: 'DJ and photobooth both finish at 10:00. MC calls the last song and thanks everyone. Guests head home.' },
+                    { type: 'paragraph', text: '[TBC — a farewell/exit moment? A last song everyone circles up for is the easy version, and needs no extra planning.]' },
+                    { type: 'checklist', items: ['Last song chosen', 'Anyone who needs a taxi sorted'] }
+                ], links: []
+            },
+            {
+                id: 31, time: '10:30 PM', title: 'Bump-Out', location: 'Ivy Sunroom', responsible: ['All vendors', 'TP', 'Jess'], teams: ['helpers', 'vendors'],
+                description: [
+                    { type: 'paragraph', text: 'Sonder Studios, The Vintage Stylus, PHOTOAUTOMAT and Bentwood Events all pack down. Rae & Chris should not be doing any of this.' },
+                    { type: 'checklist', items: ['Nominate ONE person to hold gifts + cards overnight', 'Bouquet + any keepsake florals set aside', 'Nothing left behind in the bridal suite'] }
+                ], links: []
+            },
+            {
+                id: 32, time: '11:00 PM', title: 'After Party [TBC]', location: 'TBC — Merivale can arrange', responsible: ['Merivale'], teams: ['all'],
+                description: [
+                    { type: 'paragraph', text: 'Optional. Merivale can organise something within the precinct. Rae & Chris are staying at Establishment on the 7th and 8th, so home is a short walk either way.' },
+                    { type: 'checklist', items: ['Decide yes/no — and tell people BEFORE the last song'] }
                 ], links: []
             }
         ];
@@ -675,7 +752,7 @@
                                 {desc.map((section, idx) => {
                                     if (section.type === 'paragraph' || section.type === 'text') return <p key={idx} className="text-stone-700 leading-relaxed">{section.text}</p>;
                                     if (section.type === 'list') return <ul key={idx} className="text-stone-700 leading-relaxed list-none space-y-2 pl-1">{section.items.map((line, i) => <li key={i} className="flex items-start gap-2"><span className="text-stone-400 mt-1.5 w-1.5 h-1.5 rounded-full bg-stone-300 shrink-0"></span><span>{line}</span></li>)}</ul>;
-                                    if (section.type === 'checklist') return <div key={idx} className={`space-y-2 bg-blush/70 p-3 rounded-lg border border-rose-700/25`} onClick={e => e.stopPropagation()}>{section.items.map((item, i) => <label key={i} className="flex items-center gap-3 cursor-pointer group"><div className="relative flex items-center"><input type="checkbox" className="peer appearance-none w-5 h-5 border-2 border-stone-300 rounded bg-white checked:bg-black checked:border-black transition-colors" /><Icons.Check className="w-3.5 h-3.5 text-white absolute left-[3px] top-[3px] opacity-0 peer-checked:opacity-100 pointer-events-none" /></div><span className="text-sm text-stone-600 group-hover:text-black transition-colors select-none">{item}</span></label>)}</div>;
+                                    if (section.type === 'checklist') return <div key={idx} className={`space-y-2 bg-white/70 p-3 rounded-lg border border-rose-500/25`} onClick={e => e.stopPropagation()}>{section.items.map((item, i) => <label key={i} className="flex items-center gap-3 cursor-pointer group"><div className="relative flex items-center"><input type="checkbox" className="peer appearance-none w-5 h-5 border-2 border-stone-300 rounded bg-white checked:bg-black checked:border-black transition-colors" /><Icons.Check className="w-3.5 h-3.5 text-white absolute left-[3px] top-[3px] opacity-0 peer-checked:opacity-100 pointer-events-none" /></div><span className="text-sm text-stone-600 group-hover:text-black transition-colors select-none">{item}</span></label>)}</div>;
                                     return null;
                                 })}
                             </div>
@@ -794,8 +871,8 @@
                         <div ref={timelineScrollRef} onScroll={handleTimelineScroll} className={`${panelWidth} shrink-0 relative z-20 h-screen md:h-[100dvh] overflow-y-auto ${activeTheme.bg}`}>
                             
                             {/* NATIVE SCROLL-AWAY HEADER */}
-                            <header className="max-w-4xl mx-auto px-4 py-8 text-center select-none flex flex-col items-center justify-center" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
-                                <div className="w-full flex justify-center pb-6 md:hidden"><div className="w-12 h-1.5 bg-stone-200 rounded-full"></div></div>
+                            <header className="w-full bg-cream px-4 py-8 text-center select-none flex flex-col items-center justify-center border-b border-rose-500/10" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
+                                <div className="w-full flex justify-center pb-6 md:hidden"><div className="w-12 h-1.5 bg-rose-300 rounded-full"></div></div>
                                 <h1 className={`text-4xl font-serif mb-2 ${activeTheme.pinkText || activeTheme.text}`}>{CONFIG.coupleNames}</h1>
                                 <p className="text-stone-600 font-light tracking-wide">{CONFIG.displayDate}</p>
                                 <p className="text-stone-400 font-light text-sm mt-1">{CONFIG.weddingLocation}</p>
@@ -872,9 +949,9 @@
                                                     {isExpanded ? (
                                                         <div className="flex flex-col w-full py-2 fade-in-up">
                                                             <div className="flex justify-center mb-4">
-                                                                <span className={`time-pill px-4 py-1.5 rounded-full text-sm font-bold shadow-md ${isPast ? 'bg-rose-200 text-rose-800/60' : 'bg-rose-900 text-white border border-rose-900'}`}>{event.time}</span>
+                                                                <span className={`time-pill whitespace-nowrap px-3 py-1.5 rounded-lg text-sm font-medium shadow-sm ${isPast ? 'bg-rose-200 text-rose-800/60' : 'bg-rose-700 text-white'}`}>{event.time}</span>
                                                             </div>
-                                                            <div className="bg-petal rounded-xl shadow-xl border-2 border-rose-700/50 overflow-hidden w-full">
+                                                            <div className="bg-rose-50 rounded-xl shadow-xl border-2 border-rose-700/60 overflow-hidden w-full">
                                                                 <button onClick={() => toggleEvent(event.id)} className="w-full px-6 py-5 text-left flex items-center justify-between bg-transparent outline-none">
                                                                     <div className="flex-1 pr-4">
                                                                         <h3 className={`text-xl font-serif mb-2 ${activeTheme.text}`}>{event.title}</h3>
@@ -893,7 +970,7 @@
                                                                     </div>
                                                                     <Icons.ChevronUp className="w-5 h-5 text-stone-400 shrink-0" />
                                                                 </button>
-                                                                <div className="px-6 pb-6 border-t border-rose-700/25">
+                                                                <div className="px-6 pb-6 border-t border-rose-500/25">
                                                                     {renderDescriptionContent(event.description)}
                                                                     <div className="mt-5 flex flex-wrap gap-2">{event.teams.map(team => (<span key={team} className={`px-3 py-1 ${activeTheme.light} ${activeTheme.text} text-xs rounded-full border ${activeTheme.border}`}>{CONFIG.filters.find(f => f.id === team)?.label || team}</span>))}</div>
                                                                     {event.image && <img src={event.image} alt={event.title} className="mt-4 rounded-xl w-full border border-stone-100" />}
