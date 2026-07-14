@@ -7,10 +7,10 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
     
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%23F1C9D2' rx='100' ry='100'/%3E%3Cpath fill='%23B85C6B' d='M256 420.4l-27.2-24.7C132.3 308.3 68 250.3 68 179.2 68 121.4 113.4 75.7 171 75.7c32.6 0 63.8 15.2 85 39.5 21.2-24.3 52.4-39.5 85-39.5 57.6 0 103 45.7 103 103.5 0 71.1-64.3 129.1-160.8 216.5L256 420.4z' opacity='0.15'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia, serif' font-size='160' fill='%23241419'%3ER%26C%3C/text%3E%3C/svg%3E">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%23F1C9D2'/%3E%3Cpath fill='%23B85C6B' d='M256 420.4l-27.2-24.7C132.3 308.3 68 250.3 68 179.2 68 121.4 113.4 75.7 171 75.7c32.6 0 63.8 15.2 85 39.5 21.2-24.3 52.4-39.5 85-39.5 57.6 0 103 45.7 103 103.5 0 71.1-64.3 129.1-160.8 216.5L256 420.4z' opacity='0.15'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia, serif' font-size='160' fill='%23241419'%3ER%26C%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%23FBF6EE' rx='100' ry='100'/%3E%3Cpath fill='%23B85C6B' d='M256 420.4l-27.2-24.7C132.3 308.3 68 250.3 68 179.2 68 121.4 113.4 75.7 171 75.7c32.6 0 63.8 15.2 85 39.5 21.2-24.3 52.4-39.5 85-39.5 57.6 0 103 45.7 103 103.5 0 71.1-64.3 129.1-160.8 216.5L256 420.4z' opacity='0.15'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia, serif' font-size='160' fill='%23241419'%3ER%26C%3C/text%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%23FBF6EE'/%3E%3Cpath fill='%23B85C6B' d='M256 420.4l-27.2-24.7C132.3 308.3 68 250.3 68 179.2 68 121.4 113.4 75.7 171 75.7c32.6 0 63.8 15.2 85 39.5 21.2-24.3 52.4-39.5 85-39.5 57.6 0 103 45.7 103 103.5 0 71.1-64.3 129.1-160.8 216.5L256 420.4z' opacity='0.15'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia, serif' font-size='160' fill='%23241419'%3ER%26C%3C/text%3E%3C/svg%3E">
     
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -26,37 +26,47 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans:  ['Courier Prime', 'Courier New', 'monospace'],
-                        serif: ['Courier Prime', 'Courier New', 'monospace'],
-                        mono:  ['Courier Prime', 'Courier New', 'monospace'],
-                    },
                     colors: {
+                        /* NEUTRALS — warm cream & greige. Page background, cards, muted text. */
                         stone: {
-                            50:  '#FFFFFF',
-                            100: '#FBEFF2',
-                            200: '#F1C9D2',   /* blush — card fill / hairlines */
-                            300: '#E3AAB7',
-                            400: '#C9808F',
-                            500: '#A96274',   /* muted text */
-                            600: '#7F4553',
-                            700: '#5C323D',
-                            800: '#3A2229',
-                            900: '#241419',   /* ink — headings */
-                            950: '#170C10',
+                            50:  '#FBF6EE',   /* cream — page background */
+                            100: '#F4ECE1',
+                            200: '#E7DBC9',   /* soft borders */
+                            300: '#D3C3AB',
+                            400: '#A99A85',
+                            500: '#7D7261',   /* muted text */
+                            600: '#5D5447',
+                            700: '#453F38',
+                            800: '#332F2B',
+                            900: '#241F1C',   /* ink — headings */
+                            950: '#17130F',
                         },
+                        /* ACCENT — blush -> rose, straight off the RSVP site. */
                         rose: {
-                            50:  '#FDF1F4',
-                            100: '#FBE0E6',
-                            200: '#F1C9D2',
+                            50:  '#FDF3F5',
+                            100: '#FBE6EB',
+                            200: '#F1C9D2',   /* blush — sections, tags, panels */
                             300: '#E5A3B1',
                             400: '#D07C8E',
-                            500: '#B85C6B',   /* primary accent — borders/buttons */
+                            500: '#B85C6B',   /* rose — buttons, borders, "now" */
                             600: '#A6485A',
                             700: '#8E3A4A',
-                            800: '#6E2A38',
+                            800: '#6E2A38',   /* deep rose — selected timeslot */
                             900: '#4E1B26',
                             950: '#2E0F17',
+                        },
+                        /* A HINT OF GREEN — sage/eucalypt. Used sparingly (groom's checklist). */
+                        sage: {
+                            50:  '#F2F5EF',
+                            100: '#E3EADC',
+                            200: '#C8D5BE',
+                            300: '#A8BC9A',
+                            400: '#8CA37C',
+                            500: '#6F8760',   /* sage */
+                            600: '#576C4B',
+                            700: '#42533A',
+                            800: '#2C3B30',
+                            900: '#1E2A22',   /* forest — groom modal background */
                         },
                     },
                 },
@@ -68,10 +78,13 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     
     <style>
-        body { font-family: 'Courier Prime', 'Courier New', monospace; overflow-x: hidden; background-color: #FFFFFF; color: #241419; margin: 0; padding: 0; letter-spacing: 0.01em; }
-        h1, h2, h3, .font-serif, .font-mono { font-family: 'Courier Prime', 'Courier New', monospace; }
-        h1, h2, h3, .font-serif { font-weight: 700; letter-spacing: 0.06em; }
-        h1, h2 { text-transform: uppercase; }
+        /* Inter for body copy (easy to read on a phone at 4pm with a champagne in hand),
+           Playfair Display for headings, Courier Prime kept ONLY for the times + small
+           caps labels — the typewriter nod to the RSVP site. */
+        body { font-family: 'Inter', -apple-system, sans-serif; overflow-x: hidden; background-color: #FBF6EE; color: #241F1C; margin: 0; padding: 0; }
+        h1, h2, h3, .font-serif { font-family: 'Playfair Display', Georgia, serif; }
+        h1, h2 { text-transform: uppercase; letter-spacing: 0.06em; }
+        .font-mono, .time-pill { font-family: 'Courier Prime', 'Courier New', monospace; letter-spacing: 0.04em; }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #E3AAB7; border-radius: 4px; }
@@ -347,26 +360,32 @@
             ocean: { bg: 'bg-sky-50', text: 'text-sky-900', light: 'bg-sky-100', border: 'border-sky-200', accent: 'bg-sky-700 text-white border-sky-700', accentText: 'text-sky-700', fill: 'fill-sky-200', overlay: 'bg-sky-950' },
             pistachio: { bg: 'bg-[#f1f4eb]', text: 'text-[#4a5c33]', light: 'bg-[#e2eacb]', border: 'border-[#c4d1a6]', accent: 'bg-[#9fb578] text-white border-[#9fb578]', accentText: 'text-[#748a4c]', fill: 'fill-[#d4e0b8]', overlay: 'bg-[#313d22]', pinkText: 'text-[#d49a9a]', pinkAccent: 'bg-[#d49a9a] text-white border-[#d49a9a]' },
             custom: {
-                bg: 'bg-[#FFFFFF]',                                   // page background (white, like the RSVP hero)
-                text: 'text-[#241419]',                               // ink
-                light: 'bg-[#F1C9D2]/45',                             // blush cards / panels
-                border: 'border-[#B85C6B]/45',                        // rose hairline borders
-                accent: 'bg-[#B85C6B] text-white border-[#B85C6B]',   // buttons / active pills
-                accentText: 'text-[#8E3A4A]',                         // links / accents
+                bg: 'bg-[#FBF6EE]',                                   // CREAM — page background
+                text: 'text-[#241F1C]',                               // ink
+                light: 'bg-[#F1C9D2]',                                // BLUSH — section panels, tags, headers
+                border: 'border-[#B85C6B]/35',                        // rose hairline
+                accent: 'bg-[#B85C6B] text-white border-[#B85C6B]',   // ROSE — buttons, "now", active pills
+                accentText: 'text-[#8E3A4A]',                         // links
                 fill: 'fill-[#F1C9D2]',
-                overlay: 'bg-[#241419]',
+                overlay: 'bg-[#241F1C]',
                 pinkText: 'text-[#B85C6B]',
-                pinkAccent: 'bg-[#F1C9D2] text-[#241419] border-[#B85C6B]'
+                pinkAccent: 'bg-[#F1C9D2] text-[#241F1C] border-[#B85C6B]',
+                sageText: 'text-[#6F8760]',
+                sageAccent: 'bg-[#6F8760] text-white border-[#6F8760]'
             }
         };
         const activeTheme = THEMES[CONFIG.theme] || THEMES.classic;
 
         // Perfected Checklist legible styles
         const MODAL_THEMES = {
-            ivory: { bg: 'bg-[#FFFBFC]', text: 'text-[#5C323D]', title: 'text-[#241419]', btn: 'bg-white hover:bg-[#FBEFF2] text-[#5C323D] border border-[#F1C9D2]', iconBg: 'bg-white shadow-sm', iconColor: 'text-[#B85C6B] fill-[#FBE0E6]', signoff: 'text-[#A96274]', border: 'border-[#F1C9D2]', checkBg: 'bg-white', checkBorder: 'border-[#E3AAB7] group-hover:border-[#C9808F]', checkFill: 'bg-[#B85C6B] border-[#B85C6B] text-white', checkedText: 'text-[#C9808F] line-through', progressBg: 'bg-[#F1C9D2]', progressFill: 'bg-[#B85C6B]' },
-            blush: { bg: 'bg-[#F1C9D2]', text: 'text-[#5C323D]', title: 'text-[#241419]', btn: 'bg-white/70 hover:bg-white text-[#5C323D] border border-[#B85C6B]/40', iconBg: 'bg-white', iconColor: 'text-[#B85C6B] fill-[#FBE0E6]', signoff: 'text-[#8E3A4A]', border: 'border-[#B85C6B]/40', checkBg: 'bg-white/70', checkBorder: 'border-[#B85C6B]/50 group-hover:border-[#B85C6B]', checkFill: 'bg-[#B85C6B] border-[#B85C6B] text-white', checkedText: 'text-[#A96274] line-through', progressBg: 'bg-white/60', progressFill: 'bg-[#8E3A4A]' },
-            dark: { bg: 'bg-[#241419]', text: 'text-[#F1C9D2]', title: 'text-white', btn: 'bg-[#3A2229] hover:bg-[#5C323D] text-white', iconBg: 'bg-[#3A2229]', iconColor: 'text-[#D07C8E] fill-[#4E1B26]', signoff: 'text-[#C9808F]', border: 'border-[#5C323D]', checkBg: 'bg-[#3A2229]/60', checkBorder: 'border-[#7F4553] group-hover:border-[#C9808F]', checkFill: 'bg-[#B85C6B] border-[#B85C6B] text-white', checkedText: 'text-[#7F4553] line-through', progressBg: 'bg-[#3A2229]', progressFill: 'bg-[#E5A3B1]' },
-            charcoal: { bg: 'bg-[#2E0F17]', text: 'text-[#E3AAB7]', title: 'text-white', btn: 'bg-[#4E1B26] hover:bg-[#6E2A38] text-white', iconBg: 'bg-[#4E1B26]', iconColor: 'text-[#D07C8E] fill-[#4E1B26]', signoff: 'text-[#C9808F]', border: 'border-[#4E1B26]', checkBg: 'bg-[#4E1B26]/50', checkBorder: 'border-[#8E3A4A] group-hover:border-[#D07C8E]', checkFill: 'bg-[#D07C8E] border-[#D07C8E] text-[#2E0F17]', checkedText: 'text-[#8E3A4A] line-through', progressBg: 'bg-[#4E1B26]', progressFill: 'bg-[#E5A3B1]' }
+            // BRIDE — cream paper with rose accents
+            ivory: { bg: 'bg-[#FBF6EE]', text: 'text-[#453F38]', title: 'text-[#241F1C]', btn: 'bg-white hover:bg-[#F4ECE1] text-[#453F38] border border-[#E7DBC9]', iconBg: 'bg-white shadow-sm', iconColor: 'text-[#B85C6B] fill-[#FBE6EB]', signoff: 'text-[#7D7261]', border: 'border-[#E7DBC9]', checkBg: 'bg-white', checkBorder: 'border-[#D3C3AB] group-hover:border-[#B85C6B]', checkFill: 'bg-[#B85C6B] border-[#B85C6B] text-white', checkedText: 'text-[#A99A85] line-through', progressBg: 'bg-[#E7DBC9]', progressFill: 'bg-[#B85C6B]' },
+            // SISTERS — blush
+            blush: { bg: 'bg-[#F1C9D2]', text: 'text-[#5C323D]', title: 'text-[#241F1C]', btn: 'bg-white/70 hover:bg-white text-[#5C323D] border border-[#B85C6B]/40', iconBg: 'bg-white', iconColor: 'text-[#B85C6B] fill-[#FBE6EB]', signoff: 'text-[#8E3A4A]', border: 'border-[#B85C6B]/40', checkBg: 'bg-white/70', checkBorder: 'border-[#B85C6B]/50 group-hover:border-[#B85C6B]', checkFill: 'bg-[#8E3A4A] border-[#8E3A4A] text-white', checkedText: 'text-[#A96274] line-through', progressBg: 'bg-white/60', progressFill: 'bg-[#8E3A4A]' },
+            // GROOM — deep eucalypt green, the one place the green really shows
+            dark: { bg: 'bg-[#1E2A22]', text: 'text-[#C8D5BE]', title: 'text-white', btn: 'bg-[#2C3B30] hover:bg-[#42533A] text-white', iconBg: 'bg-[#2C3B30]', iconColor: 'text-[#A8BC9A] fill-[#2C3B30]', signoff: 'text-[#8CA37C]', border: 'border-[#42533A]', checkBg: 'bg-[#2C3B30]/60', checkBorder: 'border-[#576C4B] group-hover:border-[#A8BC9A]', checkFill: 'bg-[#A8BC9A] border-[#A8BC9A] text-[#1E2A22]', checkedText: 'text-[#576C4B] line-through', progressBg: 'bg-[#2C3B30]', progressFill: 'bg-[#E5A3B1]' },
+            // BEST MATES — near-black with a sage edge
+            charcoal: { bg: 'bg-[#17130F]', text: 'text-[#D3C3AB]', title: 'text-white', btn: 'bg-[#332F2B] hover:bg-[#453F38] text-white', iconBg: 'bg-[#332F2B]', iconColor: 'text-[#8CA37C] fill-[#332F2B]', signoff: 'text-[#7D7261]', border: 'border-[#332F2B]', checkBg: 'bg-[#332F2B]/50', checkBorder: 'border-[#5D5447] group-hover:border-[#8CA37C]', checkFill: 'bg-[#6F8760] border-[#6F8760] text-white', checkedText: 'text-[#5D5447] line-through', progressBg: 'bg-[#332F2B]', progressFill: 'bg-[#8CA37C]' }
         };
 
         const Icons = {
@@ -653,7 +672,7 @@
                                 {desc.map((section, idx) => {
                                     if (section.type === 'paragraph' || section.type === 'text') return <p key={idx} className="text-stone-700 leading-relaxed">{section.text}</p>;
                                     if (section.type === 'list') return <ul key={idx} className="text-stone-700 leading-relaxed list-none space-y-2 pl-1">{section.items.map((line, i) => <li key={i} className="flex items-start gap-2"><span className="text-stone-400 mt-1.5 w-1.5 h-1.5 rounded-full bg-stone-300 shrink-0"></span><span>{line}</span></li>)}</ul>;
-                                    if (section.type === 'checklist') return <div key={idx} className={`space-y-2 bg-stone-50 p-3 rounded-lg border border-stone-200`} onClick={e => e.stopPropagation()}>{section.items.map((item, i) => <label key={i} className="flex items-center gap-3 cursor-pointer group"><div className="relative flex items-center"><input type="checkbox" className="peer appearance-none w-5 h-5 border-2 border-stone-300 rounded bg-white checked:bg-black checked:border-black transition-colors" /><Icons.Check className="w-3.5 h-3.5 text-white absolute left-[3px] top-[3px] opacity-0 peer-checked:opacity-100 pointer-events-none" /></div><span className="text-sm text-stone-600 group-hover:text-black transition-colors select-none">{item}</span></label>)}</div>;
+                                    if (section.type === 'checklist') return <div key={idx} className={`space-y-2 bg-white/70 p-3 rounded-lg border border-rose-500/20`} onClick={e => e.stopPropagation()}>{section.items.map((item, i) => <label key={i} className="flex items-center gap-3 cursor-pointer group"><div className="relative flex items-center"><input type="checkbox" className="peer appearance-none w-5 h-5 border-2 border-stone-300 rounded bg-white checked:bg-black checked:border-black transition-colors" /><Icons.Check className="w-3.5 h-3.5 text-white absolute left-[3px] top-[3px] opacity-0 peer-checked:opacity-100 pointer-events-none" /></div><span className="text-sm text-stone-600 group-hover:text-black transition-colors select-none">{item}</span></label>)}</div>;
                                     return null;
                                 })}
                             </div>
@@ -850,10 +869,10 @@
                                                     {isExpanded ? (
                                                         <div className="flex flex-col w-full py-2 fade-in-up">
                                                             <div className="flex justify-center mb-4">
-                                                                <span className={`px-4 py-1.5 rounded-full text-sm font-medium shadow-md ${isPast ? 'bg-stone-200 text-stone-500' : activeTheme.accent}`}>{event.time}</span>
+                                                                <span className={`time-pill px-4 py-1.5 rounded-full text-sm font-bold shadow-md ${isPast ? 'bg-stone-200 text-stone-500' : 'bg-rose-800 text-white border border-rose-800'}`}>{event.time}</span>
                                                             </div>
-                                                            <div className="bg-white rounded-xl shadow-xl border border-stone-300 overflow-hidden w-full">
-                                                                <button onClick={() => toggleEvent(event.id)} className="w-full px-6 py-5 text-left flex items-center justify-between bg-white outline-none">
+                                                            <div className="bg-rose-50 rounded-xl shadow-xl border-2 border-rose-500/60 overflow-hidden w-full">
+                                                                <button onClick={() => toggleEvent(event.id)} className="w-full px-6 py-5 text-left flex items-center justify-between bg-transparent outline-none">
                                                                     <div className="flex-1 pr-4">
                                                                         <h3 className={`text-xl font-serif mb-2 ${activeTheme.text}`}>{event.title}</h3>
                                                                         <div className="flex flex-col gap-2">
@@ -871,7 +890,7 @@
                                                                     </div>
                                                                     <Icons.ChevronUp className="w-5 h-5 text-stone-400 shrink-0" />
                                                                 </button>
-                                                                <div className="px-6 pb-6 border-t border-stone-100">
+                                                                <div className="px-6 pb-6 border-t border-rose-500/20">
                                                                     {renderDescriptionContent(event.description)}
                                                                     <div className="mt-5 flex flex-wrap gap-2">{event.teams.map(team => (<span key={team} className={`px-3 py-1 ${activeTheme.light} ${activeTheme.text} text-xs rounded-full border ${activeTheme.border}`}>{CONFIG.filters.find(f => f.id === team)?.label || team}</span>))}</div>
                                                                     {event.image && <img src={event.image} alt={event.title} className="mt-4 rounded-xl w-full border border-stone-100" />}
@@ -888,7 +907,7 @@
                                                     ) : (
                                                         <div className="flex items-start w-full relative pl-[7.5rem]">
                                                             <div className="absolute left-0 w-28 flex justify-center mt-1">
-                                                                <span className={`whitespace-nowrap px-3 py-1.5 rounded-lg text-sm font-medium tracking-wide shadow-sm transition-all ${isPast ? 'bg-stone-200 text-stone-500' : isNow ? `${activeTheme.accent} shadow-md` : 'bg-white border border-stone-200 text-stone-700'}`}>{event.time}</span>
+                                                                <span className={`time-pill whitespace-nowrap px-3 py-1.5 rounded-lg text-sm font-medium shadow-sm transition-all ${isPast ? 'bg-stone-200 text-stone-500' : isNow ? `${activeTheme.accent} shadow-md` : 'bg-white border border-rose-500/30 text-stone-700'}`}>{event.time}</span>
                                                             </div>
                                                             <button onClick={() => toggleEvent(event.id)} className={`bg-white rounded-xl border border-stone-200 transition-all duration-300 ease-in-out w-full shadow-sm hover:shadow-md ${isNow ? 'shadow-md border-stone-300' : ''} px-6 py-5 text-left flex items-center justify-between outline-none`}>
                                                                 <div className="flex-1 pr-4">
