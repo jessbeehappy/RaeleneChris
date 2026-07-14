@@ -7,25 +7,74 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%23fff1f2' rx='100' ry='100'/%3E%3Cpath fill='%23f43f5e' d='M256 420.4l-27.2-24.7C132.3 308.3 68 250.3 68 179.2 68 121.4 113.4 75.7 171 75.7c32.6 0 63.8 15.2 85 39.5 21.2-24.3 52.4-39.5 85-39.5 57.6 0 103 45.7 103 103.5 0 71.1-64.3 129.1-160.8 216.5L256 420.4z' opacity='0.15'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia, serif' font-size='160' fill='%231c1917'%3ER%26C%3C/text%3E%3C/svg%3E">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%23fff1f2'/%3E%3Cpath fill='%23f43f5e' d='M256 420.4l-27.2-24.7C132.3 308.3 68 250.3 68 179.2 68 121.4 113.4 75.7 171 75.7c32.6 0 63.8 15.2 85 39.5 21.2-24.3 52.4-39.5 85-39.5 57.6 0 103 45.7 103 103.5 0 71.1-64.3 129.1-160.8 216.5L256 420.4z' opacity='0.15'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia, serif' font-size='160' fill='%231c1917'%3ER%26C%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%23F1C9D2' rx='100' ry='100'/%3E%3Cpath fill='%23B85C6B' d='M256 420.4l-27.2-24.7C132.3 308.3 68 250.3 68 179.2 68 121.4 113.4 75.7 171 75.7c32.6 0 63.8 15.2 85 39.5 21.2-24.3 52.4-39.5 85-39.5 57.6 0 103 45.7 103 103.5 0 71.1-64.3 129.1-160.8 216.5L256 420.4z' opacity='0.15'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia, serif' font-size='160' fill='%23241419'%3ER%26C%3C/text%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%23F1C9D2'/%3E%3Cpath fill='%23B85C6B' d='M256 420.4l-27.2-24.7C132.3 308.3 68 250.3 68 179.2 68 121.4 113.4 75.7 171 75.7c32.6 0 63.8 15.2 85 39.5 21.2-24.3 52.4-39.5 85-39.5 57.6 0 103 45.7 103 103.5 0 71.1-64.3 129.1-160.8 216.5L256 420.4z' opacity='0.15'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia, serif' font-size='160' fill='%23241419'%3ER%26C%3C/text%3E%3C/svg%3E">
     
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        /* =====================================================================
+           WEDDING PALETTE — matched to the RSVP site (blush pink + rose + ink).
+           Tailwind's built-in "stone" (neutrals) and "rose" (accents) scales are
+           remapped here, so every class already used in the app picks up the
+           new theme automatically. Tweak the hex values below to adjust.
+           ===================================================================== */
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans:  ['Courier Prime', 'Courier New', 'monospace'],
+                        serif: ['Courier Prime', 'Courier New', 'monospace'],
+                        mono:  ['Courier Prime', 'Courier New', 'monospace'],
+                    },
+                    colors: {
+                        stone: {
+                            50:  '#FFFFFF',
+                            100: '#FBEFF2',
+                            200: '#F1C9D2',   /* blush — card fill / hairlines */
+                            300: '#E3AAB7',
+                            400: '#C9808F',
+                            500: '#A96274',   /* muted text */
+                            600: '#7F4553',
+                            700: '#5C323D',
+                            800: '#3A2229',
+                            900: '#241419',   /* ink — headings */
+                            950: '#170C10',
+                        },
+                        rose: {
+                            50:  '#FDF1F4',
+                            100: '#FBE0E6',
+                            200: '#F1C9D2',
+                            300: '#E5A3B1',
+                            400: '#D07C8E',
+                            500: '#B85C6B',   /* primary accent — borders/buttons */
+                            600: '#A6485A',
+                            700: '#8E3A4A',
+                            800: '#6E2A38',
+                            900: '#4E1B26',
+                            950: '#2E0F17',
+                        },
+                    },
+                },
+            },
+        };
+    </script>
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     
     <style>
-        body { font-family: 'Inter', sans-serif; overflow-x: hidden; background-color: #fafaf9; margin: 0; padding: 0; }
-        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+        body { font-family: 'Courier Prime', 'Courier New', monospace; overflow-x: hidden; background-color: #FFFFFF; color: #241419; margin: 0; padding: 0; letter-spacing: 0.01em; }
+        h1, h2, h3, .font-serif, .font-mono { font-family: 'Courier Prime', 'Courier New', monospace; }
+        h1, h2, h3, .font-serif { font-weight: 700; letter-spacing: 0.06em; }
+        h1, h2 { text-transform: uppercase; }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb { background: #E3AAB7; border-radius: 4px; }
         .custom-checkbox:checked + div { background-color: currentColor; border-color: currentColor; }
         .custom-checkbox:checked + div svg { display: block; }
         html { scroll-behavior: smooth; }
@@ -297,27 +346,27 @@
             sage: { bg: 'bg-emerald-50', text: 'text-emerald-900', light: 'bg-emerald-100', border: 'border-emerald-200', accent: 'bg-emerald-700 text-white border-emerald-700', accentText: 'text-emerald-700', fill: 'fill-emerald-200', overlay: 'bg-emerald-950' },
             ocean: { bg: 'bg-sky-50', text: 'text-sky-900', light: 'bg-sky-100', border: 'border-sky-200', accent: 'bg-sky-700 text-white border-sky-700', accentText: 'text-sky-700', fill: 'fill-sky-200', overlay: 'bg-sky-950' },
             pistachio: { bg: 'bg-[#f1f4eb]', text: 'text-[#4a5c33]', light: 'bg-[#e2eacb]', border: 'border-[#c4d1a6]', accent: 'bg-[#9fb578] text-white border-[#9fb578]', accentText: 'text-[#748a4c]', fill: 'fill-[#d4e0b8]', overlay: 'bg-[#313d22]', pinkText: 'text-[#d49a9a]', pinkAccent: 'bg-[#d49a9a] text-white border-[#d49a9a]' },
-            custom: { 
-                bg: 'bg-[#F4EFEA]',                             
-                text: 'text-[#2B2927]',                         
-                light: 'bg-[#F4EFEA]/60',                       
-                border: 'border-[#9AA48A]/50',                  
-                accent: 'bg-[#9AA48A] text-white border-[#9AA48A]', 
-                accentText: 'text-[#6E1A24]',                   
-                fill: 'fill-[#9AA48A]',                         
-                overlay: 'bg-[#2B2927]',                        
-                pinkText: 'text-[#D29B9B]',                     
-                pinkAccent: 'bg-[#D29B9B] text-white border-[#D29B9B]' 
+            custom: {
+                bg: 'bg-[#FFFFFF]',                                   // page background (white, like the RSVP hero)
+                text: 'text-[#241419]',                               // ink
+                light: 'bg-[#F1C9D2]/45',                             // blush cards / panels
+                border: 'border-[#B85C6B]/45',                        // rose hairline borders
+                accent: 'bg-[#B85C6B] text-white border-[#B85C6B]',   // buttons / active pills
+                accentText: 'text-[#8E3A4A]',                         // links / accents
+                fill: 'fill-[#F1C9D2]',
+                overlay: 'bg-[#241419]',
+                pinkText: 'text-[#B85C6B]',
+                pinkAccent: 'bg-[#F1C9D2] text-[#241419] border-[#B85C6B]'
             }
         };
         const activeTheme = THEMES[CONFIG.theme] || THEMES.classic;
 
         // Perfected Checklist legible styles
         const MODAL_THEMES = {
-            ivory: { bg: 'bg-[#faf9f6]', text: 'text-stone-800', title: 'text-stone-900', btn: 'bg-white hover:bg-stone-100 text-stone-800 border border-stone-200', iconBg: 'bg-white shadow-sm', iconColor: 'text-rose-400 fill-rose-50', signoff: 'text-stone-500', border: 'border-stone-200', checkBg: 'bg-white', checkBorder: 'border-stone-300 group-hover:border-stone-400', checkFill: 'bg-stone-400 border-stone-400 text-white', checkedText: 'text-stone-400 line-through', progressBg: 'bg-stone-200', progressFill: 'bg-stone-800' },
-            blush: { bg: 'bg-[#fffafa]', text: 'text-[#6b5a5a]', title: 'text-[#4a3a3a]', btn: 'bg-[#fcf5f5] hover:bg-[#f5ebeb] text-[#8a7a7a] border border-[#f5ebeb]', iconBg: 'bg-white', iconColor: 'text-[#e8d5d5] fill-[#fcf5f5]', signoff: 'text-[#c2afaf]', border: 'border-[#f5ebeb]', checkBg: 'bg-white/80', checkBorder: 'border-[#e8d5d5] group-hover:border-[#d9c1c1]', checkFill: 'bg-[#d9c1c1] border-[#d9c1c1] text-white', checkedText: 'text-[#d9c1c1] line-through', progressBg: 'bg-[#f5ebeb]', progressFill: 'bg-[#bca0a0]' },
-            dark: { bg: 'bg-stone-950', text: 'text-stone-200', title: 'text-white', btn: 'bg-stone-800 hover:bg-stone-700 text-white', iconBg: 'bg-stone-900', iconColor: 'text-stone-600 fill-stone-800', signoff: 'text-stone-500', border: 'border-stone-800', checkBg: 'bg-stone-900/50', checkBorder: 'border-stone-600 group-hover:border-stone-400', checkFill: 'bg-stone-700 border-stone-700 text-stone-300', checkedText: 'text-stone-600 line-through', progressBg: 'bg-stone-900', progressFill: 'bg-stone-300' },
-            charcoal: { bg: 'bg-[#1c1c1e]', text: 'text-[#d4d4d8]', title: 'text-white', btn: 'bg-[#27272a] hover:bg-[#3f3f46] text-white', iconBg: 'bg-[#27272a]', iconColor: 'text-[#52525b] fill-[#18181b]', signoff: 'text-[#71717a]', border: 'border-[#27272a]', checkBg: 'bg-[#27272a]/50', checkBorder: 'border-[#52525b] group-hover:border-[#71717a]', checkFill: 'bg-[#52525b] border-[#52525b] text-[#a1a1aa]', checkedText: 'text-[#52525b] line-through', progressBg: 'bg-[#27272a]', progressFill: 'bg-[#a1a1aa]' }
+            ivory: { bg: 'bg-[#FFFBFC]', text: 'text-[#5C323D]', title: 'text-[#241419]', btn: 'bg-white hover:bg-[#FBEFF2] text-[#5C323D] border border-[#F1C9D2]', iconBg: 'bg-white shadow-sm', iconColor: 'text-[#B85C6B] fill-[#FBE0E6]', signoff: 'text-[#A96274]', border: 'border-[#F1C9D2]', checkBg: 'bg-white', checkBorder: 'border-[#E3AAB7] group-hover:border-[#C9808F]', checkFill: 'bg-[#B85C6B] border-[#B85C6B] text-white', checkedText: 'text-[#C9808F] line-through', progressBg: 'bg-[#F1C9D2]', progressFill: 'bg-[#B85C6B]' },
+            blush: { bg: 'bg-[#F1C9D2]', text: 'text-[#5C323D]', title: 'text-[#241419]', btn: 'bg-white/70 hover:bg-white text-[#5C323D] border border-[#B85C6B]/40', iconBg: 'bg-white', iconColor: 'text-[#B85C6B] fill-[#FBE0E6]', signoff: 'text-[#8E3A4A]', border: 'border-[#B85C6B]/40', checkBg: 'bg-white/70', checkBorder: 'border-[#B85C6B]/50 group-hover:border-[#B85C6B]', checkFill: 'bg-[#B85C6B] border-[#B85C6B] text-white', checkedText: 'text-[#A96274] line-through', progressBg: 'bg-white/60', progressFill: 'bg-[#8E3A4A]' },
+            dark: { bg: 'bg-[#241419]', text: 'text-[#F1C9D2]', title: 'text-white', btn: 'bg-[#3A2229] hover:bg-[#5C323D] text-white', iconBg: 'bg-[#3A2229]', iconColor: 'text-[#D07C8E] fill-[#4E1B26]', signoff: 'text-[#C9808F]', border: 'border-[#5C323D]', checkBg: 'bg-[#3A2229]/60', checkBorder: 'border-[#7F4553] group-hover:border-[#C9808F]', checkFill: 'bg-[#B85C6B] border-[#B85C6B] text-white', checkedText: 'text-[#7F4553] line-through', progressBg: 'bg-[#3A2229]', progressFill: 'bg-[#E5A3B1]' },
+            charcoal: { bg: 'bg-[#2E0F17]', text: 'text-[#E3AAB7]', title: 'text-white', btn: 'bg-[#4E1B26] hover:bg-[#6E2A38] text-white', iconBg: 'bg-[#4E1B26]', iconColor: 'text-[#D07C8E] fill-[#4E1B26]', signoff: 'text-[#C9808F]', border: 'border-[#4E1B26]', checkBg: 'bg-[#4E1B26]/50', checkBorder: 'border-[#8E3A4A] group-hover:border-[#D07C8E]', checkFill: 'bg-[#D07C8E] border-[#D07C8E] text-[#2E0F17]', checkedText: 'text-[#8E3A4A] line-through', progressBg: 'bg-[#4E1B26]', progressFill: 'bg-[#E5A3B1]' }
         };
 
         const Icons = {
