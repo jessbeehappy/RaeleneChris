@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Raelene & Chris Wedding Timeline</title>
+    <title>Wedding Day-Of Timeline</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,46 +27,49 @@
             theme: {
                 extend: {
                     colors: {
-                        /* NEUTRALS — warm cream & greige. Page background, cards, muted text. */
+                        /* LAYERS, lightest -> darkest:
+                           cream  #FDFBF7  banner / top bars           (paper)
+                           blush  #F1C9D2  page background             (the RSVP pink)
+                           petal  #E5AAB9  event cards & detail panels (a step darker)
+                           rose   #B85C6B  borders, "happening now"
+                           wine   #8E3A4A  time pills
+                           plum   #4E1B26  the SELECTED time pill      (darkest)          */
+                        cream: '#FDFBF7',
+                        blush: '#F1C9D2',
+                        petal: '#E5AAB9',
+                        /* NEUTRALS — rose-tinted so muted text stays legible on pink */
                         stone: {
-                            50:  '#FBF6EE',   /* cream — page background */
-                            100: '#F4ECE1',
-                            200: '#E7DBC9',   /* soft borders */
-                            300: '#D3C3AB',
-                            400: '#A99A85',
-                            500: '#7D7261',   /* muted text */
-                            600: '#5D5447',
-                            700: '#453F38',
-                            800: '#332F2B',
-                            900: '#241F1C',   /* ink — headings */
-                            950: '#17130F',
+                            50:  '#FDFBF7',
+                            100: '#F7E6EB',
+                            200: '#E3BDC8',   /* hairline borders on pink */
+                            300: '#CE9AA8',
+                            400: '#A2707E',   /* icons */
+                            500: '#7A4351',   /* muted text */
+                            600: '#5E2F3C',
+                            700: '#47222D',
+                            800: '#33191F',
+                            900: '#241419',   /* ink */
+                            950: '#170C10',
                         },
-                        /* ACCENT — blush -> rose, straight off the RSVP site. */
+                        /* PINKS */
                         rose: {
-                            50:  '#FDF3F5',
-                            100: '#FBE6EB',
-                            200: '#F1C9D2',   /* blush — sections, tags, panels */
-                            300: '#E5A3B1',
+                            50:  '#FBEAEF',
+                            100: '#F5D5DD',
+                            200: '#F1C9D2',
+                            300: '#E5AAB9',
                             400: '#D07C8E',
-                            500: '#B85C6B',   /* rose — buttons, borders, "now" */
+                            500: '#B85C6B',
                             600: '#A6485A',
                             700: '#8E3A4A',
-                            800: '#6E2A38',   /* deep rose — selected timeslot */
+                            800: '#6E2A38',
                             900: '#4E1B26',
                             950: '#2E0F17',
                         },
-                        /* A HINT OF GREEN — sage/eucalypt. Used sparingly (groom's checklist). */
+                        /* A HINT OF GREEN — groom's checklist only */
                         sage: {
-                            50:  '#F2F5EF',
-                            100: '#E3EADC',
-                            200: '#C8D5BE',
-                            300: '#A8BC9A',
-                            400: '#8CA37C',
-                            500: '#6F8760',   /* sage */
-                            600: '#576C4B',
-                            700: '#42533A',
-                            800: '#2C3B30',
-                            900: '#1E2A22',   /* forest — groom modal background */
+                            50: '#F2F5EF', 100: '#E3EADC', 200: '#C8D5BE', 300: '#A8BC9A',
+                            400: '#8CA37C', 500: '#6F8760', 600: '#576C4B', 700: '#42533A',
+                            800: '#2C3B30', 900: '#1E2A22',
                         },
                     },
                 },
@@ -81,7 +84,7 @@
         /* Inter for body copy (easy to read on a phone at 4pm with a champagne in hand),
            Playfair Display for headings, Courier Prime kept ONLY for the times + small
            caps labels — the typewriter nod to the RSVP site. */
-        body { font-family: 'Inter', -apple-system, sans-serif; overflow-x: hidden; background-color: #FBF6EE; color: #241F1C; margin: 0; padding: 0; }
+        body { font-family: 'Inter', -apple-system, sans-serif; overflow-x: hidden; background-color: #F1C9D2; color: #241F1C; margin: 0; padding: 0; }
         h1, h2, h3, .font-serif { font-family: 'Playfair Display', Georgia, serif; }
         h1, h2 { text-transform: uppercase; letter-spacing: 0.06em; }
         .font-mono, .time-pill { font-family: 'Courier Prime', 'Courier New', monospace; letter-spacing: 0.04em; }
@@ -360,18 +363,18 @@
             ocean: { bg: 'bg-sky-50', text: 'text-sky-900', light: 'bg-sky-100', border: 'border-sky-200', accent: 'bg-sky-700 text-white border-sky-700', accentText: 'text-sky-700', fill: 'fill-sky-200', overlay: 'bg-sky-950' },
             pistachio: { bg: 'bg-[#f1f4eb]', text: 'text-[#4a5c33]', light: 'bg-[#e2eacb]', border: 'border-[#c4d1a6]', accent: 'bg-[#9fb578] text-white border-[#9fb578]', accentText: 'text-[#748a4c]', fill: 'fill-[#d4e0b8]', overlay: 'bg-[#313d22]', pinkText: 'text-[#d49a9a]', pinkAccent: 'bg-[#d49a9a] text-white border-[#d49a9a]' },
             custom: {
-                bg: 'bg-[#FBF6EE]',                                   // CREAM — page background
-                text: 'text-[#241F1C]',                               // ink
-                light: 'bg-[#F1C9D2]',                                // BLUSH — section panels, tags, headers
-                border: 'border-[#B85C6B]/35',                        // rose hairline
-                accent: 'bg-[#B85C6B] text-white border-[#B85C6B]',   // ROSE — buttons, "now", active pills
-                accentText: 'text-[#8E3A4A]',                         // links
-                fill: 'fill-[#F1C9D2]',
-                overlay: 'bg-[#241F1C]',
-                pinkText: 'text-[#B85C6B]',
-                pinkAccent: 'bg-[#F1C9D2] text-[#241F1C] border-[#B85C6B]',
-                sageText: 'text-[#6F8760]',
-                sageAccent: 'bg-[#6F8760] text-white border-[#6F8760]'
+                bg: 'bg-blush',                                       // PAGE = blush pink
+                text: 'text-stone-900',                              // ink
+                light: 'bg-petal',                                   // panels / tags = a step darker
+                border: 'border-rose-500/40',
+                accent: 'bg-rose-700 text-white border-rose-700',    // buttons / active pills = wine
+                accentText: 'text-rose-800',
+                fill: 'fill-petal',
+                overlay: 'bg-stone-900',
+                pinkText: 'text-rose-800',
+                pinkAccent: 'bg-petal text-stone-900 border-rose-500',
+                sageText: 'text-sage-500',
+                sageAccent: 'bg-sage-500 text-white border-sage-500'
             }
         };
         const activeTheme = THEMES[CONFIG.theme] || THEMES.classic;
@@ -443,9 +446,9 @@
                     {error && <p className="text-rose-500 text-sm font-medium absolute mt-[-20px] transition-opacity">Incorrect PIN</p>}
 
                     <div className="grid grid-cols-3 gap-4 sm:gap-6 max-w-[280px] w-full mx-auto mt-4 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-150">
-                        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(num => <button key={num} onClick={() => handleKeyPress(num)} className={`aspect-square rounded-full bg-white shadow-sm text-2xl font-light ${activeTheme.text} active:bg-stone-200 active:scale-95 transition-all hover:shadow-md flex items-center justify-center`}>{num}</button>)}
+                        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(num => <button key={num} onClick={() => handleKeyPress(num)} className={`aspect-square rounded-full bg-cream shadow-sm text-2xl font-light ${activeTheme.text} active:bg-stone-200 active:scale-95 transition-all hover:shadow-md flex items-center justify-center`}>{num}</button>)}
                         <button onClick={handleClear} className="aspect-square rounded-full text-stone-400 font-medium active:bg-stone-200 active:scale-95 transition-all flex items-center justify-center text-sm uppercase tracking-wider">Clear</button>
-                        <button onClick={() => handleKeyPress(0)} className={`aspect-square rounded-full bg-white shadow-sm text-2xl font-light ${activeTheme.text} active:bg-stone-200 active:scale-95 transition-all hover:shadow-md flex items-center justify-center`}>0</button>
+                        <button onClick={() => handleKeyPress(0)} className={`aspect-square rounded-full bg-cream shadow-sm text-2xl font-light ${activeTheme.text} active:bg-stone-200 active:scale-95 transition-all hover:shadow-md flex items-center justify-center`}>0</button>
                         <button onClick={handleEnter} className={`aspect-square rounded-full ${activeTheme.accent} shadow-md active:opacity-80 active:scale-95 transition-all flex items-center justify-center`}><Icons.ArrowRight className="w-8 h-8" /></button>
                     </div>
                 </div>
@@ -454,7 +457,7 @@
 
         const HelpfulLinksModal = ({ onClose }) => (
             <div className="fixed inset-0 bg-black/60 z-[100] flex items-center justify-center p-4 animate-in fade-in">
-                <div className="bg-white rounded-2xl w-full max-w-sm max-h-[90vh] overflow-y-auto shadow-2xl animate-in slide-in-from-bottom-8">
+                <div className="bg-cream rounded-2xl w-full max-w-sm max-h-[90vh] overflow-y-auto shadow-2xl animate-in slide-in-from-bottom-8">
                     <div className={`${activeTheme.light} px-6 py-4 flex justify-between items-center border-b ${activeTheme.border} sticky top-0 z-10`}>
                         <h3 className={`font-serif text-xl ${activeTheme.text}`}>Info & Links</h3>
                         <button onClick={onClose} className="p-1 rounded-full hover:bg-black/10 transition"><Icons.X className={`w-5 h-5 ${activeTheme.text}`} /></button>
@@ -672,7 +675,7 @@
                                 {desc.map((section, idx) => {
                                     if (section.type === 'paragraph' || section.type === 'text') return <p key={idx} className="text-stone-700 leading-relaxed">{section.text}</p>;
                                     if (section.type === 'list') return <ul key={idx} className="text-stone-700 leading-relaxed list-none space-y-2 pl-1">{section.items.map((line, i) => <li key={i} className="flex items-start gap-2"><span className="text-stone-400 mt-1.5 w-1.5 h-1.5 rounded-full bg-stone-300 shrink-0"></span><span>{line}</span></li>)}</ul>;
-                                    if (section.type === 'checklist') return <div key={idx} className={`space-y-2 bg-white/70 p-3 rounded-lg border border-rose-500/20`} onClick={e => e.stopPropagation()}>{section.items.map((item, i) => <label key={i} className="flex items-center gap-3 cursor-pointer group"><div className="relative flex items-center"><input type="checkbox" className="peer appearance-none w-5 h-5 border-2 border-stone-300 rounded bg-white checked:bg-black checked:border-black transition-colors" /><Icons.Check className="w-3.5 h-3.5 text-white absolute left-[3px] top-[3px] opacity-0 peer-checked:opacity-100 pointer-events-none" /></div><span className="text-sm text-stone-600 group-hover:text-black transition-colors select-none">{item}</span></label>)}</div>;
+                                    if (section.type === 'checklist') return <div key={idx} className={`space-y-2 bg-blush/70 p-3 rounded-lg border border-rose-700/25`} onClick={e => e.stopPropagation()}>{section.items.map((item, i) => <label key={i} className="flex items-center gap-3 cursor-pointer group"><div className="relative flex items-center"><input type="checkbox" className="peer appearance-none w-5 h-5 border-2 border-stone-300 rounded bg-white checked:bg-black checked:border-black transition-colors" /><Icons.Check className="w-3.5 h-3.5 text-white absolute left-[3px] top-[3px] opacity-0 peer-checked:opacity-100 pointer-events-none" /></div><span className="text-sm text-stone-600 group-hover:text-black transition-colors select-none">{item}</span></label>)}</div>;
                                     return null;
                                 })}
                             </div>
@@ -764,12 +767,12 @@
                     {showLinks && <HelpfulLinksModal onClose={() => setShowLinks(false)} />}
 
                     <div className="hidden md:block fixed top-1/2 left-8 z-50 transform -translate-y-1/2">
-                        {view === 'timeline' && CONFIG.enableMapScreen && <button onClick={() => setView('map')} className="bg-white/80 backdrop-blur shadow-lg p-4 rounded-full hover:bg-white transition-all hover:scale-110 border border-stone-100"><Icons.ArrowLeft className="w-6 h-6 text-stone-600" /></button>}
-                        {view === 'vendors' && <button onClick={() => setView('timeline')} className="bg-white/80 backdrop-blur shadow-lg p-4 rounded-full hover:bg-white transition-all hover:scale-110 border border-stone-100"><Icons.ArrowLeft className="w-6 h-6 text-stone-600" /></button>}
+                        {view === 'timeline' && CONFIG.enableMapScreen && <button onClick={() => setView('map')} className="bg-cream/90 backdrop-blur shadow-lg p-4 rounded-full hover:bg-white transition-all hover:scale-110 border border-stone-100"><Icons.ArrowLeft className="w-6 h-6 text-stone-600" /></button>}
+                        {view === 'vendors' && <button onClick={() => setView('timeline')} className="bg-cream/90 backdrop-blur shadow-lg p-4 rounded-full hover:bg-white transition-all hover:scale-110 border border-stone-100"><Icons.ArrowLeft className="w-6 h-6 text-stone-600" /></button>}
                     </div>
                     <div className="hidden md:block fixed top-1/2 right-8 z-50 transform -translate-y-1/2">
-                        {view === 'timeline' && <button onClick={() => setView('vendors')} className="bg-white/80 backdrop-blur shadow-lg p-4 rounded-full hover:bg-white transition-all hover:scale-110 border border-stone-100"><Icons.ArrowRight className="w-6 h-6 text-stone-600" /></button>}
-                        {view === 'map' && <button onClick={() => setView('timeline')} className="bg-white/80 backdrop-blur shadow-lg p-4 rounded-full hover:bg-white transition-all hover:scale-110 border border-stone-100"><Icons.ArrowRight className="w-6 h-6 text-stone-600" /></button>}
+                        {view === 'timeline' && <button onClick={() => setView('vendors')} className="bg-cream/90 backdrop-blur shadow-lg p-4 rounded-full hover:bg-white transition-all hover:scale-110 border border-stone-100"><Icons.ArrowRight className="w-6 h-6 text-stone-600" /></button>}
+                        {view === 'map' && <button onClick={() => setView('timeline')} className="bg-cream/90 backdrop-blur shadow-lg p-4 rounded-full hover:bg-white transition-all hover:scale-110 border border-stone-100"><Icons.ArrowRight className="w-6 h-6 text-stone-600" /></button>}
                     </div>
 
                     <div className={`flex ${layoutWidth} transition-transform duration-500 ease-in-out h-screen md:h-[100dvh]`} style={{ transform: `translateX(-${translation}%)` }}>
@@ -777,7 +780,7 @@
                         {/* --- VIEW 1: MAP --- */}
                         {CONFIG.enableMapScreen && (
                             <div className={`${panelWidth} shrink-0 h-screen md:h-[100dvh] relative bg-stone-200 flex flex-col`}>
-                                <div className="absolute top-6 left-6 z-10"><button onClick={() => setView('timeline')} className="bg-white/90 p-3 rounded-full shadow-md"><Icons.ArrowRight className="w-6 h-6 text-stone-600" /></button></div>
+                                <div className="absolute top-6 left-6 z-10"><button onClick={() => setView('timeline')} className="bg-cream/90 p-3 rounded-full shadow-md"><Icons.ArrowRight className="w-6 h-6 text-stone-600" /></button></div>
                                 <div onClick={() => setMapZoom(!mapZoom)} className={`flex-1 relative overflow-hidden flex items-center justify-center cursor-zoom-in ${mapZoom ? 'cursor-grab active:cursor-grabbing' : ''}`}>
                                     <div className={`transition-all duration-300 w-full h-full ${mapZoom ? 'overflow-auto no-scrollbar' : 'overflow-hidden flex items-center justify-center'}`}>
                                         <img src={CONFIG.mapImageURL} alt="Map" className={`transition-transform duration-300 origin-center ${mapZoom ? 'w-[250%] max-w-none' : 'w-full h-full object-contain p-4'}`} />
@@ -813,7 +816,7 @@
                             </header>
 
                             {/* TRUE STICKY FILTER BAR */}
-                            <div className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur shadow-sm border-b border-stone-200 transition-all duration-300" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
+                            <div className="sticky top-0 z-50 w-full bg-cream/95 backdrop-blur shadow-sm border-b border-rose-500/25 transition-all duration-300" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
                                 <div className="max-w-4xl mx-auto px-4 w-full">
                                     <div className="flex items-center justify-between w-full py-4">
                                         <button onClick={scrollToTop} className={`pr-4 pl-2 text-stone-400 hover:${activeTheme.text} transition-opacity duration-300 md:hidden ${isScrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
@@ -869,9 +872,9 @@
                                                     {isExpanded ? (
                                                         <div className="flex flex-col w-full py-2 fade-in-up">
                                                             <div className="flex justify-center mb-4">
-                                                                <span className={`time-pill px-4 py-1.5 rounded-full text-sm font-bold shadow-md ${isPast ? 'bg-stone-200 text-stone-500' : 'bg-rose-800 text-white border border-rose-800'}`}>{event.time}</span>
+                                                                <span className={`time-pill px-4 py-1.5 rounded-full text-sm font-bold shadow-md ${isPast ? 'bg-rose-200 text-rose-800/60' : 'bg-rose-900 text-white border border-rose-900'}`}>{event.time}</span>
                                                             </div>
-                                                            <div className="bg-rose-50 rounded-xl shadow-xl border-2 border-rose-500/60 overflow-hidden w-full">
+                                                            <div className="bg-petal rounded-xl shadow-xl border-2 border-rose-700/50 overflow-hidden w-full">
                                                                 <button onClick={() => toggleEvent(event.id)} className="w-full px-6 py-5 text-left flex items-center justify-between bg-transparent outline-none">
                                                                     <div className="flex-1 pr-4">
                                                                         <h3 className={`text-xl font-serif mb-2 ${activeTheme.text}`}>{event.title}</h3>
@@ -890,7 +893,7 @@
                                                                     </div>
                                                                     <Icons.ChevronUp className="w-5 h-5 text-stone-400 shrink-0" />
                                                                 </button>
-                                                                <div className="px-6 pb-6 border-t border-rose-500/20">
+                                                                <div className="px-6 pb-6 border-t border-rose-700/25">
                                                                     {renderDescriptionContent(event.description)}
                                                                     <div className="mt-5 flex flex-wrap gap-2">{event.teams.map(team => (<span key={team} className={`px-3 py-1 ${activeTheme.light} ${activeTheme.text} text-xs rounded-full border ${activeTheme.border}`}>{CONFIG.filters.find(f => f.id === team)?.label || team}</span>))}</div>
                                                                     {event.image && <img src={event.image} alt={event.title} className="mt-4 rounded-xl w-full border border-stone-100" />}
@@ -907,9 +910,9 @@
                                                     ) : (
                                                         <div className="flex items-start w-full relative pl-[7.5rem]">
                                                             <div className="absolute left-0 w-28 flex justify-center mt-1">
-                                                                <span className={`time-pill whitespace-nowrap px-3 py-1.5 rounded-lg text-sm font-medium shadow-sm transition-all ${isPast ? 'bg-stone-200 text-stone-500' : isNow ? `${activeTheme.accent} shadow-md` : 'bg-white border border-rose-500/30 text-stone-700'}`}>{event.time}</span>
+                                                                <span className={`time-pill whitespace-nowrap px-3 py-1.5 rounded-lg text-sm font-medium shadow-sm transition-all ${isPast ? 'bg-rose-200 text-rose-800/60' : isNow ? 'bg-rose-500 text-white shadow-md ring-2 ring-rose-900/30' : 'bg-rose-700 text-white shadow-sm'}`}>{event.time}</span>
                                                             </div>
-                                                            <button onClick={() => toggleEvent(event.id)} className={`bg-white rounded-xl border border-stone-200 transition-all duration-300 ease-in-out w-full shadow-sm hover:shadow-md ${isNow ? 'shadow-md border-stone-300' : ''} px-6 py-5 text-left flex items-center justify-between outline-none`}>
+                                                            <button onClick={() => toggleEvent(event.id)} className={`bg-petal rounded-xl border border-rose-500/40 transition-all duration-300 ease-in-out w-full shadow-sm hover:shadow-md ${isNow ? 'shadow-md border-rose-700' : ''} px-6 py-5 text-left flex items-center justify-between outline-none`}>
                                                                 <div className="flex-1 pr-4">
                                                                     <h3 className={`text-xl font-serif mb-2 ${activeTheme.text}`}>{event.title}</h3>
                                                                     <div className="flex flex-col gap-2">
@@ -940,7 +943,7 @@
 
                         {/* --- VIEW 3: DIRECTORY (RIGHT) --- */}
                         <div className={`${panelWidth} shrink-0 h-screen md:h-[100dvh] overflow-y-auto relative ${activeTheme.bg} flex flex-col`}>
-                            <div className="bg-white/95 backdrop-blur border-b border-stone-200 sticky top-0 z-50 shrink-0" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
+                            <div className="bg-cream/95 backdrop-blur border-b border-rose-500/25 sticky top-0 z-50 shrink-0" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
                                 <div className="w-full flex justify-center pt-3 md:hidden"><div className="w-12 h-1.5 bg-stone-200 rounded-full"></div></div>
                                 <div className="max-w-3xl mx-auto px-6 py-6 pt-4 text-center select-none relative">
                                     <button onClick={() => setView('timeline')} className="absolute left-6 top-5 p-2 text-stone-400 hover:text-black md:hidden">
@@ -958,7 +961,7 @@
                             <div className="flex-1 overflow-y-auto w-full">
                                 <div className="max-w-3xl mx-auto w-full px-4 py-8">
                                     {directoryTab === 'responsible' && (
-                                        <div className="bg-white rounded-2xl shadow-sm border border-stone-200 overflow-hidden animate-in fade-in zoom-in-95 duration-300">
+                                        <div className="bg-petal rounded-2xl shadow-sm border border-rose-500/40 overflow-hidden animate-in fade-in zoom-in-95 duration-300">
                                             <div className="divide-y divide-stone-100">
                                                 {responsiblePeople.map((person, idx) => (
                                                     <div key={idx} className="p-5 flex items-center justify-between hover:bg-stone-50 transition-colors">
@@ -974,7 +977,7 @@
                                     )}
 
                                     {directoryTab === 'vendors' && (
-                                        <div className="bg-white rounded-2xl shadow-sm border border-stone-200 overflow-hidden animate-in fade-in zoom-in-95 duration-300">
+                                        <div className="bg-petal rounded-2xl shadow-sm border border-rose-500/40 overflow-hidden animate-in fade-in zoom-in-95 duration-300">
                                             <div className="divide-y divide-stone-100">
                                                 {vendors.map((vendor, idx) => (
                                                     <div key={idx} className="p-5 flex flex-col sm:flex-row gap-4 sm:items-center justify-between hover:bg-stone-50 transition-colors">
