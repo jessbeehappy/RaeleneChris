@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Raelene and Chris' Wedding Timeline</title>
+    <title>Wedding Day-Of Timeline</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -129,9 +129,7 @@
                 { id: 'bride', label: 'Bride' },
                 { id: 'groom', label: 'Groom' },
                 { id: 'sisters', label: 'Sisters' },
-                { id: 'best_mates', label: 'Best Mates' },
-                { id: 'helpers', label: 'TP & Jess' },
-                { id: 'vendors', label: 'Vendors' }
+                { id: 'best_mates', label: 'Best Mates' }
             ],
 
             checklists: {
@@ -174,7 +172,7 @@
             { role: 'Celebrant', name: 'Maria Olivina', contact: '0450121025', email: 'maria.olvina@gmail.com' },
             { role: 'DJ (4pm–10pm)', name: 'The Vintage Stylus', contact: '0418217637', email: 'thevintagestylus@gmail.com' },
             { role: 'Florist', name: 'Sonder Studios — Juls', contact: '0403158533', email: 'histudiosonder@gmail.com' },
-            { role: 'Photobooth (5pm–10pm)', name: 'PHOTOAUTOMAT', contact: 'TBA', email: '' },
+            { role: 'Photobooth', name: 'PHOTOAUTOMAT', contact: 'TBA', email: '' },
             { role: 'Content Creator', name: 'Onthedaysocials — Alicia', contact: '0410176533', email: '' },
             { role: 'Chairs, Aisle & Seating', name: 'Bentwood Events — Andrew Hood', contact: '0403815550', email: 'info@bentwoodevents.com.au' },
             { role: 'Venue Coordinator', name: 'Merivale — Ivy Sunroom', contact: 'TBA', email: '' },
@@ -184,9 +182,9 @@
         const responsiblePeople = [
             { role: "Raelene's Sister", name: 'Rina', contact: 'TBA' },
             { role: "Raelene's Sister", name: 'Roselene', contact: 'TBA' },
-            { role: 'Groomsman', name: 'Gabby', contact: 'TBA' },
+            { role: 'Right hand (non-bridal party)', name: 'Jess', contact: 'TBA' },
             { role: 'Right hand (non-bridal party)', name: 'Tharinda "TP"', contact: 'TBA' },
-            { role: 'Right hand (non-bridal party)', name: 'Jess', contact: 'TBA' }
+            { role: 'Groomsman', name: 'Gabby', contact: 'TBA' }
         ];
 
         // ============================================================================
@@ -194,6 +192,18 @@
         // Built from the runsheet. Anything still unconfirmed is marked [TBC];
         // suggestions I've added to fill gaps are marked [SUGGESTED].
         // ============================================================================
+        // Real Google Maps links. Match by keyword; anything else falls back to a search.
+        const MAP_LINKS = {
+            ivy: 'https://maps.app.goo.gl/RBsaHiAdZWEUpXB56',
+            hotel: 'https://maps.app.goo.gl/v8RcAKZzugdemXzZ8'
+        };
+        const mapUrlFor = (location) => {
+            const l = (location || '').toLowerCase();
+            if (l.includes('ivy')) return MAP_LINKS.ivy;
+            if (l.includes('hotel') || l.includes('suite') || l.includes('establishment')) return MAP_LINKS.hotel;
+            return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`;
+        };
+
         const events = [
             {
                 id: 1, time: '8:00 AM', title: 'Wake Up', location: "Rae's Suite — Establishment Hotel, CBD", responsible: ['Raelene', 'Sisters'], teams: ['bride', 'sisters'],
@@ -944,7 +954,7 @@
                                             const isFirstActive = event.id === currentEventId;
 
                                             return (
-                                                <div key={event.id} ref={isFirstActive ? activeRef : null} className={`relative z-10 transition-all duration-300 ease-in-out ${isPast ? 'opacity-60 grayscale' : ''}`}>
+                                                <div key={event.id} ref={isFirstActive ? activeRef : null} className={`relative z-10 transition-all duration-300 ease-in-out ${isPast ? 'opacity-40' : ''}`}>
                                                     
                                                     {isExpanded ? (
                                                         <div className="flex flex-col w-full py-2 fade-in-up">
@@ -956,7 +966,7 @@
                                                                     <div className="flex-1 pr-4">
                                                                         <h3 className={`text-xl font-serif mb-2 ${activeTheme.text}`}>{event.title}</h3>
                                                                         <div className="flex flex-col gap-2">
-                                                                            <a href={`http://googleusercontent.com/maps.google.com/?q=${encodeURIComponent(event.location)}`} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-1.5 text-sm text-stone-500 font-light hover:${activeTheme.accentText} transition-colors w-fit`} onClick={e => e.stopPropagation()}>
+                                                                            <a href={mapUrlFor(event.location)} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-1.5 text-sm text-stone-500 font-light hover:${activeTheme.accentText} transition-colors w-fit`} onClick={e => e.stopPropagation()}>
                                                                                 <Icons.MapPin className="w-3.5 h-3.5" />
                                                                                 <span className="underline underline-offset-2">{event.location}</span>
                                                                             </a>
@@ -993,7 +1003,7 @@
                                                                 <div className="flex-1 pr-4">
                                                                     <h3 className={`text-xl font-serif mb-2 ${activeTheme.text}`}>{event.title}</h3>
                                                                     <div className="flex flex-col gap-2">
-                                                                        <a href={`http://googleusercontent.com/maps.google.com/?q=${encodeURIComponent(event.location)}`} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-1.5 text-sm text-stone-500 font-light hover:${activeTheme.accentText} transition-colors w-fit`} onClick={e => e.stopPropagation()}>
+                                                                        <a href={mapUrlFor(event.location)} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-1.5 text-sm text-stone-500 font-light hover:${activeTheme.accentText} transition-colors w-fit`} onClick={e => e.stopPropagation()}>
                                                                             <Icons.MapPin className="w-3.5 h-3.5" />
                                                                             <span className="underline underline-offset-2 truncate max-w-[200px] sm:max-w-none">{event.location}</span>
                                                                         </a>
