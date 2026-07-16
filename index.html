@@ -229,7 +229,8 @@
             {
                 id: 4, time: '9:30 AM', title: 'HMU Arrives (Rachelle)', location: "Rae's Room — Establishment Hotel", responsible: ['Rachelle Facelo', 'Sisters'], teams: ['bride', 'sisters'],
                 description: [
-                    { type: 'paragraph', text: 'Rachelle Facelo arrives and sets up. Order: Rae 10:00, Sister 1 12:00, Sister 2 12:45 — all done by 2:30. Final touches held for Pepperjune\'s arrival.' },
+                    { type: 'paragraph', text: 'Rachelle Facelo arrives and sets up. Final touches held for Pepperjune\'s arrival.' },
+                    { type: 'list', title: 'Makeup order', items: ['Rae — 10:00', 'Sister 1 — 12:00', 'Sister 2 — 12:45', 'All done by 2:30'] },
                     { type: 'checklist', items: ['Confirm running order with Rachelle'] }
                 ], links: []
             },
@@ -263,7 +264,10 @@
             {
                 id: 9, time: '12:00 PM', title: 'Bump-In Starts at Ivy', location: 'Ivy Sunroom, 330 George St', responsible: ['Merivale', 'Sonder Studios', 'Bentwood Events'], teams: ['all'],
                 description: [
-                    { type: 'paragraph', text: 'Vendor setup begins at Ivy. Merivale: table settings, menus, place cards, bar sign, wishing well. Sonder Studios: draping and florals in the ceremony area and on the long dining table; commemorative bouquet delivered. Bentwood: ceremony chairs and aisle.' },
+                    { type: 'paragraph', text: 'Vendor setup begins at Ivy.' },
+                    { type: 'list', title: 'Merivale', items: ['Table settings, menus, place cards', 'Bar sign at the bar', 'Wishing well at the front desk'] },
+                    { type: 'list', title: 'Sonder Studios', items: ['Draping + florals in the ceremony area', 'Florals on the long dining table', 'Commemorative bouquet delivered'] },
+                    { type: 'list', title: 'Bentwood Events', items: ['Ceremony chairs + aisle', 'Reception seating'] },
                     { type: 'checklist', items: ['Mirror sign + stand placed', 'Guestbook on the marble table', 'Chair counts confirmed'] }
                 ], links: []
             },
@@ -277,8 +281,8 @@
             {
                 id: 11, time: '1:00 PM', title: 'Bouquet & Buttonholes Delivered', location: 'Establishment Hotel — both rooms', responsible: ['Sonder Studios'], teams: ['bride', 'groom'],
                 description: [
-                    { type: 'paragraph', text: 'Sonder Studios deliver Rae\'s bouquet to her room and buttonholes to Chris\'s room.' },
-                    { type: 'checklist', items: ['Bouquet to Rae\'s room', 'Buttonholes: Chris, his dad, his mum'] }
+                    { type: 'paragraph', text: 'Sonder Studios deliver to the hotel.' },
+                    { type: 'list', items: ['Bouquet — Rae\'s room', 'Buttonhole — Chris', 'Buttonhole — Chris\'s dad', 'Buttonhole — Chris\'s mum'] }
                 ], links: []
             },
             {
@@ -326,15 +330,15 @@
                 id: 18, time: '4:00 PM', title: 'Ceremony Begins', location: 'Ivy Sunroom (Lower Section)', responsible: ['Maria Olivina', 'The Vintage Stylus', 'Pepperjune'], teams: ['all'],
                 description: [
                     { type: 'paragraph', text: 'Chris waits at the back with his parents; Daphne, Lennox and Evander in front of him. Rae waits near the lifts, out of view, listening for her cue. Maria welcomes guests and runs housekeeping.' },
-                    { type: 'paragraph', text: 'Order of entry: Daphne (flower girl) with flowers, then Lennox and Evander (page boys) with a ring box each. Daphne places the commemorative flowers on Rae\'s parents\' chairs; boys are seated; Rosie takes the rings. Chris and parents walk down; parents are seated. Guests stand for Rae.' },
-                    { type: 'list', items: ['Processional — Frank Ocean, At Your Best', 'Signing — Spandau Ballet, True', 'Aisle exit — Hall & Oates, You Make My Dreams'] }
+                    { type: 'list', title: 'Order of entry', items: ['Daphne (flower girl) with flowers', 'Lennox + Evander (page boys) behind, ring box each', 'Daphne places flowers on Rae\'s parents\' chairs', 'Page boys seated; Rosie takes the rings', 'Chris + parents down the aisle; parents seated', 'Guests stand for Rae'] },
+                    { type: 'list', title: 'Songs', items: ['Processional — Frank Ocean, At Your Best', 'Signing — Spandau Ballet, True', 'Aisle exit — Hall & Oates, You Make My Dreams'] }
                 ], links: []
             },
             {
                 id: 19, time: '4:30 PM', title: 'Group Photos', location: 'Ivy Sunroom (Lower Section)', responsible: ['Pepperjune', 'Maria Olivina', 'Raelene', 'Chris'], teams: ['all'],
                 description: [
                     { type: 'paragraph', text: 'Maria announces and organises the group shots — 8–10 key groups.' },
-                    { type: 'list', items: ["Rae's family: Rina, Roselene, JR, Joel, Marloe, Evander, Lennox, Daphne", "Chris's family: Mum, Dad, Pat, Tuyet, Angelina, Trish, Orlando, Enrico", 'All friends'] },
+                    { type: 'list', title: 'Groups', items: ["Rae's family — Rina, Roselene, JR, Joel, Marloe, Evander, Lennox, Daphne", "Chris's family — Mum, Dad, Pat, Tuyet, Angelina, Trish, Orlando, Enrico", 'All friends'] },
                     { type: 'checklist', items: ['Printed group list on hand', 'Named person calling groups', 'Listed guests told beforehand to stay back'] }
                 ], links: []
             },
@@ -740,7 +744,7 @@
                             <div className="mt-4 space-y-4">
                                 {desc.map((section, idx) => {
                                     if (section.type === 'paragraph' || section.type === 'text') return <p key={idx} className="text-stone-700 leading-relaxed">{section.text}</p>;
-                                    if (section.type === 'list') return <ul key={idx} className="text-stone-700 leading-relaxed list-none space-y-2 pl-1">{section.items.map((line, i) => <li key={i} className="flex items-start gap-2"><span className="text-stone-400 mt-1.5 w-1.5 h-1.5 rounded-full bg-stone-300 shrink-0"></span><span>{line}</span></li>)}</ul>;
+                                    if (section.type === 'list') return <div key={idx}>{section.title && <p className="text-sm font-semibold uppercase tracking-wide text-rose-800 mb-1.5">{section.title}</p>}<ul className="text-stone-700 leading-relaxed list-none space-y-1.5 pl-1">{section.items.map((line, i) => <li key={i} className="flex items-start gap-2.5"><span className="w-1.5 h-1.5 rounded-full bg-rose-500 shrink-0 mt-2"></span><span>{line}</span></li>)}</ul></div>;
                                     if (section.type === 'checklist') return <div key={idx} className={`space-y-2 bg-white/70 p-3 rounded-lg border border-rose-500/25`} onClick={e => e.stopPropagation()}>{section.items.map((item, i) => <label key={i} className="flex items-center gap-3 cursor-pointer group"><div className="relative flex items-center"><input type="checkbox" className="peer appearance-none w-5 h-5 border-2 border-stone-300 rounded bg-white checked:bg-black checked:border-black transition-colors" /><Icons.Check className="w-3.5 h-3.5 text-white absolute left-[3px] top-[3px] opacity-0 peer-checked:opacity-100 pointer-events-none" /></div><span className="text-sm text-stone-600 group-hover:text-black transition-colors select-none">{item}</span></label>)}</div>;
                                     return null;
                                 })}
