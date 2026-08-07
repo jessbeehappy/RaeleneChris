@@ -175,9 +175,11 @@
             { role: 'DJ', name: 'The Vintage Stylus — Adam', contact: '0418217637', email: 'thevintagestylus@gmail.com' },
             { role: 'Florist & Draping', name: 'Sonder Studios — Juls', contact: '0403158533', email: 'histudiosonder@gmail.com' },
             { role: 'Photobooth', name: 'PHOTOAUTOMAT — Lauren Hickson', contact: '0411348334', email: '' },
-            { role: 'Content Creator', name: 'Onthedaysocials — Alicia', contact: '0410176533', email: '' },
+            { role: 'Content Creator', name: 'Onthedaysocials — Emily', contact: '0477463374', email: '' },
             { role: 'Chairs', name: 'Bentwood Events — Andrew Hood', contact: '0403815550', email: 'info@bentwoodevents.com.au' },
-            { role: 'Venue Coordinator (day of)', name: 'Merivale — Jessica McGregor', contact: '0466513186', email: 'Jessica.McGregor@merivale.com' },
+            { role: 'Venue — Bump-In (day of)', name: 'Merivale — Juliana', contact: '0450146208', email: '' },
+            { role: 'Venue — Floor Manager (day of)', name: 'Merivale — Sharon', contact: '0451359671', email: '' },
+            { role: 'Venue Coordinator (week before)', name: 'Merivale — Jessica McGregor', contact: '0466513186', email: 'Jessica.McGregor@merivale.com' },
             { role: 'Venue Coordinator (current)', name: 'Merivale — Kellie Worthington', contact: '0423826648', email: 'kellie.worthington@merivale.com' }
         ];
 
@@ -210,8 +212,8 @@
             {
                 id: 1, time: '8:00 AM', title: 'Wake Up', location: "Rae's Room — Establishment Hotel, 5 Bridge Lane", responsible: ['Raelene'], teams: ['bride'],
                 description: [
-                    { type: 'paragraph', text: 'Rae wakes and gets ready for the morning of prep and makeup. If timings allow, Rae and Chris have a final breakfast together before Chris moves to his own room.' },
-                    { type: 'checklist', items: ['Dress + veil steamed and hanging', 'Water + a light breakfast', 'Phone charged, playlist ready'] }
+                    { type: 'paragraph', text: 'Rae wakes and gets ready for the morning of prep and makeup, and changes into her getting-ready outfit. If timings allow, Rae and Chris have a final breakfast together before Chris moves to his own room.' },
+                    { type: 'checklist', items: ['Getting-ready robe / outfit on', 'Dress + veil steamed and hanging', 'Water + a light breakfast', 'Phone charged, playlist ready'] }
                 ], links: []
             },
             {
@@ -224,23 +226,23 @@
             {
                 id: 3, time: '9:00 AM', title: 'Setup Prep + Letters', location: 'Establishment Hotel — both rooms', responsible: ['Raelene', 'Sisters', 'Chris'], teams: ['bride', 'sisters', 'groom'],
                 description: [
-                    { type: 'paragraph', text: 'Sisters set up the HMU area in Rae\'s room — clear space near natural light and a power point. Chris moves to his own room and exchanges letters with Rae. If time permits, Rae opens her letter from her Hens with the sisters — Jess films the moment (approx 15 min).' },
-                    { type: 'list', title: 'Chris takes to his room', items: ['Suit', 'Shoes', 'Rings x2', 'His bag', 'Drinks / food', 'Letter for Rae'] },
+                    { type: 'paragraph', text: 'Sisters set up the HMU area in Rae\'s room — clear space near natural light and a power point. Chris moves to his own room. If time permits, Rae opens her letter from her Hens with the sisters — Jess films the moment (approx 15 min).' },
+                    { type: 'list', title: 'Chris takes to his room', items: ['Suit', 'Shoes', 'Rings x2', 'His bag', 'Drinks / food'] },
                     { type: 'checklist', items: ['Jess ready to film the Hens letter moment', 'Extension cord for the HMU station', 'Room tidied for photos'] }
                 ], links: []
             },
             {
                 id: 4, time: '9:30 AM', title: 'HMU Arrives (Rachelle)', location: "Rae's Room — Establishment Hotel", responsible: ['Rachelle Facelo', 'Sisters'], teams: ['bride', 'sisters'],
                 description: [
-                    { type: 'paragraph', text: 'Rachelle Facelo arrives and sets up. Sisters ready to start makeup at 10:00. Rachelle can do 90% and leave final touches for Pepperjune. If not done earlier, Rae opens the Hens letter now (Jess films, approx 15 min).' },
-                    { type: 'list', title: 'Makeup order', items: ['Sister 1 — 10:00', 'Raelene — 12:00', 'Sister 2 — 12:45'] },
+                    { type: 'paragraph', text: 'Rachelle Facelo arrives and sets up. Sisters ready to start makeup at 10:00. If not done earlier, Rae opens the Hens letter now (Jess films, approx 15 min).' },
+                    { type: 'list', title: 'Makeup order', items: ['Rina — 10:00 (makeup only)', 'Raelene — 10:45 (makeup + hair)', 'Roselene — 12:45 (makeup only)'] },
                     { type: 'checklist', items: ['Confirm running order with Rachelle', 'Offer coffee / water'] }
                 ], links: []
             },
             {
-                id: 5, time: '10:00 AM', title: 'Hair & Makeup — Block 1', location: "Rae's Room — Establishment Hotel", responsible: ['Rachelle Facelo', 'Sisters'], teams: ['bride', 'sisters'],
+                id: 5, time: '10:00 AM', title: 'Makeup — Block 1 (Rina)', location: "Rae's Room — Establishment Hotel", responsible: ['Rachelle Facelo', 'Rina'], teams: ['bride', 'sisters'],
                 description: [
-                    { type: 'paragraph', text: 'Sister 1 in the chair first, per the makeup order.' }
+                    { type: 'paragraph', text: 'Rina in the chair first (makeup only), per the makeup order.' }
                 ], links: []
             },
             {
@@ -251,17 +253,17 @@
                 ], links: []
             },
             {
-                id: 7, time: '11:00 AM', title: 'Hair & Makeup — Block 2', location: "Rae's Room — Establishment Hotel", responsible: ['Rachelle Facelo', 'Sisters'], teams: ['bride', 'sisters'],
+                id: 7, time: '10:45 AM', title: 'Bride Hair & Makeup — Block 2', location: "Rae's Room — Establishment Hotel", responsible: ['Rachelle Facelo', 'Raelene', 'Sisters'], teams: ['bride', 'sisters'],
                 description: [
-                    { type: 'paragraph', text: 'HMU continues. Gather Rae\'s details for the photographer. Rae goes into the chair around 12:00. Chris must be back in his room by 11:30 for the flower delivery.' },
+                    { type: 'paragraph', text: 'HMU starts on Rae (makeup and hair). Gather Rae\'s details for the photographer. Chris must be back in his room by 11:30 for the flower delivery.' },
                     { type: 'checklist', items: ['Rae\'s shoes set aside', 'Sentimental photos / heirlooms boxed', 'Chris back in his room by 11:30'] }
                 ], links: []
             },
             {
                 id: 8, time: '11:30 AM', title: 'Lunch + Flowers Delivered', location: 'Establishment Hotel — both rooms', responsible: ['Jess', 'Tharinda', 'Sonder Studios'], teams: ['bride', 'groom', 'sisters', 'best_mates'],
                 description: [
-                    { type: 'paragraph', text: 'TP & Jess deliver lunch to both rooms — catering for approx 10, easily shareable (sandwiches and water). Sonder Studios deliver flowers at the same time.' },
-                    { type: 'list', title: "Rae's room", items: ['Bouquet', 'Commemorative bouquet (carried by flower girl Daphne)'] },
+                    { type: 'paragraph', text: 'TP & Jess deliver lunch from Banksia Bakehouse to both rooms. Sonder Studios deliver flowers at the same time.' },
+                    { type: 'list', title: "Rae's room", items: ['Commemorative bouquet (carried by flower girl Daphne)', "Rae's own bouquet is delicate — given to her later at the Ivy waiting room, not here"] },
                     { type: 'list', title: "Chris's room", items: ['Buttonhole — Chris', 'Buttonhole — Chris\'s dad', 'Buttonhole — Chris\'s mum'] },
                     { type: 'checklist', items: ['Food kept clear of the dress'] }
                 ], links: []
@@ -269,10 +271,10 @@
             {
                 id: 9, time: '12:00 PM', title: 'Bump-In Starts at Ivy', location: 'Ivy Sunroom, 330 George St', responsible: ['Merivale', 'Sonder Studios', 'Bentwood Events'], teams: ['all'],
                 description: [
-                    { type: 'paragraph', text: 'Vendor setup begins at Ivy. (Back at the hotel, Rae goes into the makeup chair around now.)' },
+                    { type: 'paragraph', text: 'Vendor setup begins at Ivy. (Back at the hotel, Rae is in the makeup chair; Roselene follows at 12:45.)' },
                     { type: 'list', title: 'Merivale', items: ['Menus + place cards across the table', 'Bar sign at the bar', 'Wishing well at the front marble table, with Sonder florals', 'Mirror sign + stand behind the front marble table, facing the terrace', 'Guestbook on the fixed marble table'] },
                     { type: 'list', title: 'Sonder Studios', items: ['Draping in the ceremony area', 'Florals in the ceremony area', 'Florals on the long dining table'] },
-                    { type: 'list', title: 'Bentwood Events', items: ['64 guest chairs (includes the 2 reserved seats)', '2 chairs for the signing table', 'Chairs for the long dining table'] },
+                    { type: 'list', title: 'Bentwood Events', items: ['64 guest chairs (includes the 2 reserved seats)', '2 chairs for the signing table', 'Long dining table chairs', '"Reserved Row" signs: first 2 rows left (Rae\'s family + Jason & Alice), first row right (Chris\'s family)'] },
                     { type: 'checklist', items: ['2 seats left-of-aisle kept empty for Rae\'s Mum & Dad', 'Their photo placed on the chair(s)'] }
                 ], links: []
             },
@@ -292,27 +294,28 @@
             {
                 id: 12, time: '1:30 PM', title: "Pepperjune Coverage Begins — Chris's Room", location: 'Establishment Hotel — both rooms', responsible: ['Pepperjune (David)', 'Chris', "Chris's Parents", 'Rachelle Facelo'], teams: ['groom', 'best_mates', 'bride'],
                 description: [
-                    { type: 'paragraph', text: 'Photo/video coverage starts — a 30-minute block on Chris\'s final touches, with his parents in the room. Chris reads his letter from Rae. Meanwhile, Rae\'s hair and makeup must be complete for Pepperjune arriving at her room.' },
-                    { type: 'checklist', items: ['Tie / watch / shoes saved for camera', 'Letter from Rae on hand', 'Rae\'s HMU complete'] }
+                    { type: 'paragraph', text: 'Photo/video coverage starts — a 30-minute block on Chris\'s final touches, with his parents in the room. Meanwhile, Rae\'s hair and makeup must be complete for Pepperjune arriving at her room.' },
+                    { type: 'checklist', items: ['Tie / watch / shoes saved for camera', 'Rae\'s HMU complete'] }
                 ], links: []
             },
             {
-                id: 13, time: '2:00 PM', title: "Pepperjune Move to Rae's Room + DJ Bump-In", location: "Rae's Room / Ivy Sunroom", responsible: ['Pepperjune', 'Raelene', 'Sisters', 'The Vintage Stylus'], teams: ['bride', 'sisters'],
+                id: 13, time: '2:00 PM', title: "Pepperjune Move to Rae's Room + Final Touches", location: "Rae's Room / Ivy Sunroom", responsible: ['Pepperjune', 'Raelene', 'Sisters', 'The Vintage Stylus'], teams: ['bride', 'sisters'],
                 description: [
-                    { type: 'paragraph', text: 'Pepperjune move to Rae\'s room to film with the sisters. At Ivy, The Vintage Stylus (Adam) sets up in front of the two fixed marble tables per the floor plan, with portable speakers.' }
+                    { type: 'paragraph', text: 'Pepperjune move to Rae\'s room to film with the sisters. Prioritise any photos with the commemorative bouquet — Jess/TP take it to Ivy at 2:30. HMU final touch-ups and veil placement; sisters help Rae into the dress. At Ivy, The Vintage Stylus (Adam) sets up in front of the two fixed marble tables with portable speakers.' },
+                    { type: 'checklist', items: ['Commemorative bouquet photos done before 2:30', 'Veil placed', 'Crochet hook for buttons, scissors for tags'] }
                 ], links: []
             },
             {
-                id: 14, time: '2:30 PM', title: 'HMU Wraps + Chris Departs + Photobooth Set-Up', location: 'Establishment Hotel → Ivy Sunroom', responsible: ['Rachelle Facelo', 'Sisters', 'Chris', 'Alicia (Content)', 'PHOTOAUTOMAT'], teams: ['bride', 'groom', 'sisters'],
+                id: 14, time: '2:30 PM', title: 'Content Creator Starts + Chris Departs + Photobooth', location: 'Establishment Hotel → Ivy Sunroom', responsible: ['Emily (Content)', 'Sisters', 'Chris', 'PHOTOAUTOMAT'], teams: ['bride', 'groom', 'sisters'],
                 description: [
-                    { type: 'paragraph', text: 'Final touch-ups and veil placement; sisters help Rae into the dress and she reads Chris\'s letter. HMU officially wraps and OnTheDay Socials (Alicia) starts. Chris leaves for Ivy — keep Rae in her room so they don\'t cross paths. At Ivy, PHOTOAUTOMAT sets up on the undercover terrace (operator returns at 5pm).' },
+                    { type: 'paragraph', text: 'OnTheDay Socials (Emily) starts once makeup is complete. Chris leaves for Ivy — keep Rae in her room so they don\'t cross paths. At Ivy, PHOTOAUTOMAT sets up on the undercover terrace (operator returns at 5pm).' },
                     { type: 'list', title: 'Chris takes with him', items: ['Rings x2', 'Buttonholes on Chris, Mum and Dad', 'Vows (with the celebrant)'] },
                     { type: 'list', title: 'Jess & TP take with them', items: ['Photos of Rae\'s Mum and Dad', 'Commemorative bouquet'] },
-                    { type: 'checklist', items: ['Chris to keep breathing', 'TP/Jess message the sisters once at Ivy, so Chris can\'t see Rae'] }
+                    { type: 'checklist', items: ['Chris to keep breathing', 'TP & Jess leave for Ivy with Chris', 'TP/Jess message the sisters once at Ivy, so Chris can\'t see Rae'] }
                 ], links: []
             },
             {
-                id: 15, time: '3:00 PM', title: 'Depart for Ivy Sunroom', location: 'Establishment Hotel → Ivy Sunroom', responsible: ['Raelene', 'Sisters', 'Pepperjune', 'Alicia (Content)'], teams: ['bride', 'sisters'],
+                id: 15, time: '3:00 PM', title: 'Depart for Ivy Sunroom', location: 'Establishment Hotel → Ivy Sunroom', responsible: ['Raelene', 'Sisters', 'Pepperjune', 'Emily (Content)'], teams: ['bride', 'sisters'],
                 description: [
                     { type: 'paragraph', text: 'Pepperjune and OnTheDay Socials head to Ivy. Confirm Chris has already left for the ceremony area before Rae travels.' },
                     { type: 'checklist', items: ['Confirm Chris has left', 'Rae\'s bag with Rina', 'Emergency + touch-up kit', 'Flat shoes'] }
@@ -322,9 +325,9 @@
                 id: 16, time: '3:30 PM', title: 'Pre-Ceremony Prep + Greenroom', location: 'Ivy Sunroom', responsible: ['Maria Olivina', 'The Vintage Stylus', 'Chris', 'Pepperjune', 'Jess', 'Tharinda'], teams: ['all'],
                 description: [
                     { type: 'paragraph', text: 'Maria (celebrant) arrives around 3:15, checks in with Chris and sets up mic/audio. Pepperjune photograph the reception area and set up for the ceremony. Chris stays in the ceremony area. Guests may start to arrive.' },
-                    { type: 'paragraph', text: 'Rae heads to the Ivy lobby; staff take her to an allocated greenroom in the main Ivy building. Rina stays with Rae until they\'re called.' },
+                    { type: 'paragraph', text: 'Rae heads to the Ivy lobby; staff take her to an allocated greenroom in the main Ivy building. Rina/Rae message Sonder to drop Rae\'s bouquet to the waiting room — Maria may check in at the same time (can come with Sonder). Rina stays with Rae until called.' },
                     { type: 'list', title: 'Kids at Ivy', items: ['Joel, JR, Marloe, Daphne, Lennox on site'] },
-                    { type: 'checklist', items: ['TP & Jess: place Rae\'s parents\' photo on/between the 2 reserved seats', 'Mic tested', 'Chris, flower girl + page boys ready', 'Rina with Rae in the greenroom, holding Rae\'s bag'] }
+                    { type: 'checklist', items: ['TP & Jess: place Rae\'s parents\' photo on/between the 2 reserved seats', 'Message Sonder for the bouquet to the greenroom', 'Mic tested', 'Chris, flower girl + page boys ready'] }
                 ], links: []
             },
             {
@@ -337,7 +340,7 @@
             {
                 id: 18, time: '4:00 PM', title: 'Ceremony Begins', location: 'Ivy Sunroom (Lower Section)', responsible: ['Maria Olivina', 'The Vintage Stylus', 'Chris', 'Raelene', 'Pepperjune'], teams: ['all'],
                 description: [
-                    { type: 'paragraph', text: 'Cannot start until everyone is in position. Chris at the back with his parents (dad/parents may wait down the stairs). Daphne (flowers), Lennox + Evander (a ring box each) at the back, in front of Chris. Roselene/Rina seated at the front. Immediate families in the first two rows. Jason and Alice in the second row on the bride\'s side — Jason on the aisle, as he brings the rings up when Maria announces. Rae waits inside near the lifts, out of view. Maria checks in with Rae, returns and starts the formalities.' },
+                    { type: 'paragraph', text: 'Cannot start until everyone is in position. Chris at the back with his parents (dad/parents may wait down the stairs). Daphne (flowers), Lennox + Evander (a ring box each) at the back, in front of Chris. Roselene/Rina seated at the front. Immediate families in the first two rows. Jason and Alice in the second row on the bride\'s side — Jason on the aisle, as he brings the rings up when Maria announces. Rae waits inside near the lifts, out of view. Maria checks in with Rae one last time, returns and starts the formalities.' },
                     { type: 'list', title: 'Order of entry', items: ['Daphne with flowers, Lennox + Evander behind with a ring box each', 'Daphne places the commemorative flowers on Rae\'s parents\' chairs', 'Page boys sit; Rosie takes the rings from the kids and passes them to Jason to hold', 'Chris + parents down the aisle; parents seated', 'Chris signals Maria; Maria asks guests to stand for Rae'] },
                     { type: 'list', title: 'Songs', items: ['Processional — Frank Ocean, At Your Best (pre-edited; Adam has the timestamps)', 'Signing — Spandau Ballet, True', 'Aisle exit — Hall & Oates, You Make My Dreams'] },
                     { type: 'list', title: 'Signing witnesses', items: ['Ruby Esquivel', 'Patrick Patacsil'] },
@@ -347,13 +350,13 @@
             {
                 id: 19, time: '4:30 PM', title: 'Group Photos + Bar Opens', location: 'Ivy Sunroom (Lower + Main)', responsible: ['Pepperjune', 'Maria Olivina', 'Raelene', 'Chris', 'Jess', 'Tharinda'], teams: ['all'],
                 description: [
-                    { type: 'paragraph', text: 'Maria announces and organises the group photos; Jess & TP help move people through quickly. The bar opens now — guests mingle in the main section while photos run.' },
+                    { type: 'paragraph', text: 'Maria announces and organises the group photos; Jess & TP help move people through quickly. The bar opens now — guests mingle in the main section and on the terrace (preferably) while photos run.' },
                     { type: 'list', title: 'Group photo list', items: ["Rae's immediate family — Rina, Roselene, JR, Joel, Marloe, Evander, Lennox, Daphne", "Chris's immediate family — Mum, Dad, Pat, Tuyet, Angelina, Trish, Orlando, Enrico", 'Braithwhite family — Menchie, Tony, Aaron, John, Louise', 'Esquivel family — Ruby, Monching, Ryan, Phuong, Raymond, Mimi', 'Salvador & Mendoza — Lotte, Jojo, Kirsty, Jojo, Cynthia, Arvin, Aga', 'Boquiren family — Lisa, Jerry, Tharinda, Jessica, Janet, Jerel', "Rae's school friends & partners — Christina, Monica, Nico, Jessica I, Rani, Mariam, Sayeed", 'Other close friends — Aakanksha, Brian, Gabby, Glen, Shan, Kevin, Alice, Jason, Eric, John, David, Jenna, Norman'] },
-                    { type: 'checklist', items: ['Printed group list on hand', 'Listed guests told beforehand to stay back', 'Bar open; guests directed to the main section'] }
+                    { type: 'checklist', items: ['Printed group list on hand', 'Listed guests told beforehand to stay back', 'Bar open; guests directed to the main section + terrace'] }
                 ], links: []
             },
             {
-                id: 20, time: '4:45 PM', title: 'Couple Photoshoot', location: 'Ivy, George Street, CBD', responsible: ['Pepperjune', 'Alicia (Content)', 'Raelene', 'Chris'], teams: ['bride', 'groom'],
+                id: 20, time: '4:45 PM', title: 'Couple Photoshoot', location: 'Ivy, George Street, CBD', responsible: ['Pepperjune', 'Emily (Content)', 'Raelene', 'Chris'], teams: ['bride', 'groom'],
                 description: [
                     { type: 'paragraph', text: 'Rae & Chris head off for couple portraits with Pepperjune and the content creator — George Street, the lifts, and possibly Ivy Penthouse or Little Felix if available (confirm with Ivy the week of the wedding).' },
                     { type: 'checklist', items: ['Flat shoes', 'Touch-up kit with a sister'] }
@@ -367,9 +370,9 @@
                 ], links: []
             },
             {
-                id: 22, time: '5:45 PM', title: 'Photoshoot Ends — Couple Rest', location: 'Ivy Sunroom (Bridal Room)', responsible: ['Raelene', 'Chris'], teams: ['bride', 'groom'],
+                id: 22, time: '5:45 PM', title: 'Photoshoot Ends — Couple Rest', location: 'Ivy Sunroom (Bridal Room)', responsible: ['Raelene', 'Chris', 'Pepperjune'], teams: ['bride', 'groom'],
                 description: [
-                    { type: 'paragraph', text: 'Rae and Chris return to the bridal room to rest and prepare for the reception.' },
+                    { type: 'paragraph', text: 'Rae and Chris return to the bridal room to rest and prepare for the reception. Pepperjune capture any moments of guests opening/reading letters if possible.' },
                     { type: 'checklist', items: ['Bustle the dress', 'Touch-ups', 'Eat + hydrate'] }
                 ], links: []
             },
@@ -427,7 +430,7 @@
                 ], links: []
             },
             {
-                id: 30, time: '8:30 PM', title: 'Content Creator Coverage Ends', location: 'Ivy Sunroom (Main Section)', responsible: ['Alicia (Content)'], teams: ['all'],
+                id: 30, time: '8:30 PM', title: 'Content Creator Coverage Ends', location: 'Ivy Sunroom (Main Section)', responsible: ['Emily (Content)'], teams: ['all'],
                 description: [
                     { type: 'paragraph', text: 'OnTheDay Socials finishes — ensure any key content moments are captured.' }
                 ], links: []
@@ -464,9 +467,9 @@
                 ], links: []
             },
             {
-                id: 36, time: '11:00 PM', title: 'After Party [TBC]', location: 'TBC — Merivale can arrange', responsible: ['Merivale'], teams: ['all'],
+                id: 36, time: '11:00 PM', title: 'After Party [TBC]', location: 'Somewhere — TBC', responsible: ['Merivale'], teams: ['all'],
                 description: [
-                    { type: 'paragraph', text: 'Optional; can be organised by Merivale.' }
+                    { type: 'paragraph', text: 'Optional; can be organised by Merivale on the night.' }
                 ], links: []
             }
         ];
